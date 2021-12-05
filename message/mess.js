@@ -11,7 +11,7 @@ module.exports.mess = {
 group: '*Command Ini Hanya Bisa Digunakan Di Grup*.',
 pribadi: '*Command Ini Hanya Bisa Digunakan Di Pribadi Chat*.',
 admin: '*Command Ini Hanya Bisa Digunakan Oleh Admin Group*.',
-premium: '*Kamu Bukan User Premium Silahkan Beli Premium Ke Owner*.',
+premium: 'Kamu bukan user premium, kirim perintah *.buypremium* untuk membeli premium',
 owner: '*Command Ini Hanya Untuk Owner*.',
 Badmin: '*Command Ini Bisa Digunakan Setelah Bot Dijadikan Admin*.'
 			}
