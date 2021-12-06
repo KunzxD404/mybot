@@ -7839,16 +7839,10 @@ return reply(require('util').format(evaluate))
 
 }
 }
-if (isCmd){
-	tek = `© KunzBotz`
-teks = `╔═══ ❰ 「 *NOT FOUND* 」❱ ════
-║┣❥ *Nama :* *${pushname}*
-║┣❥ *Nomer :* @${senderr.split("@")[0]}
-║┣❥ *Command :* ${prefix}${command}
-╚════ ⸨ *${botName}* ⸩  ═════`
-sendButMessage (from, teks, tek, daftar3, 'extendedTextMessage', {sendEphemeral:true, quoted:kyy, contextInfo:{ forwardingScore:508, isForwarded:true, mentionedJid:[senderr]}})
+if (isCmd) {
+textImg(`*Maaf ${pushname} Command* *${cmd}* *tidak terdaftar dalam menu bot*`)
 }
-	} 
+}
 if (isGroup && budy != undefined) {
 } else {
 console.log('[',color('TEXT','teal'),']',`Pesan : ${budy} Dari`, color(pushname))
