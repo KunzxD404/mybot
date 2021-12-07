@@ -1,7 +1,8 @@
 module.exports.mess = {
 	        wait: '*Sedang Diproses*',
 			success: '*Success*',
-			wrongFormat: 'Wrong format, try again in the menu',
+			Ban: '*Maaf Tapi Kamu Telah Dibanned Silahkan Hubungi Owner Untuk Membukanya*',
+			wrongFormat: '*Wrong format, try again in the menu*',
 			error: {
 				api: '*Terjadi Kesalahan*',
 				stick: 'Oops Error Occurred',
