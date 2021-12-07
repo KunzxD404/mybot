@@ -5,6 +5,7 @@ const figlet = require('figlet')
 const { uncache, nocache } = require('./lib/loader')
 const setting = JSON.parse(fs.readFileSync('./setting.json'))
 const welcome = require('./message/group')
+const sgc = require('./message/group')
 baterai = 'unknown'
 charging = 'unknown'
 

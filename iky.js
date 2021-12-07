@@ -6750,6 +6750,7 @@ ikyy.groupUpdateDescription(from, `${body.slice(9)}`)
 ikyy.sendMessage(from, '「 SUKSES 」Mengubah Desk Grup', text, { quoted: fkontak })
 break
 case 'setgrupname':
+case 'setnamegrup':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
  if (!isGroupAdmins && !isOwner && !kyy.key.fromMe) return reply(mess.only.admin)
