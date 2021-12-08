@@ -1,4 +1,4 @@
-const p2 = '.'
+const p2 = '.' 
 
 exports.rulesBot = (prefix) => {
  return `Syarat & Ketentuan Bot   
@@ -295,6 +295,7 @@ exports.ownerMenu = (prefix) => {
 ┃✗⃟♠️❱${p2}*leaveall*
 ┃✗⃟♠️❱${p2}*leaveall*
 ┃✗⃟♠️❱${p2}*join*
+┃✗⃟♠️❱${p2}*sethelp*
 ┃✗⃟♠️❱${p2}*shutdown*
 ┃✗⃟♠️❱${p2}*getquoted*
 ┃✗⃟♠️❱${p2}*exif*
@@ -594,14 +595,558 @@ exports.storageMenu = (prefix) => {
 ┃✗⃟♠️❱${p2}*desah*
 ┗━━━━━━━━━━━━━`
 }
-exports.infoDev = (prefix) => {
-	return `╔════ ◤ *Info Developer* ◢ 
-║╔▸  
-║╠ *Nama* : *KunzxD* 
-║╠ *Nomer* : wa.me/6287778886786 
-║╠ *Github* : https://github.com/KunzxD404
-║╠ *Yutub* : KunzxD
-║╠ *Ig* : @iam_kunzx 
-║╚▸ 
-╚════ ◤ *${botName}* ◢`
+exports.allMenuu = (prefix) => {
+	return `${bold}👑Owner Name : KunzxD${bold}
+${bold}😈Bot Name : Kunz Botz${bold}
+${bold}📍Prefix : 「${prefix}」${bold}
+${bold}🗄Lib : Baileys${bold}
+${bold}♨️Hit today : ${hit_today.length}${bold}
+${bold}🐣Hit All : ${hitall}${bold}
+${bold}🙆‍♂️Total User : ${_registered.length}${bold}
+${bold}🗓Calender : ${date}${bold}
+${bold}⏰Time : ${time}${bold}
+${bold}⏳Runtime :${bold}
+${bold}${runtime(process.uptime())}${bold}
+ 
+《𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊》
+ 
+${bold}✗⃟♠️❱Name : ${pushname}${bold}
+${bold}✗⃟♠️❱Bio : ${p1 ? `${p1.status}` : '-'}${bold}
+${bold}✗⃟♠️❱Nomor : @${sender.split("@")[0]}${bold}
+${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
+
+《 𝙇𝙄𝙎𝙏 𝙈𝙀𝙉𝙐 》
+
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}opengc
+┃✗⃟♠️❱${prefix}closegc
+┃✗⃟♠️❱${prefix}welcome *1/0*
+┃✗⃟♠️❱${prefix}antilink *1/0*
+┃✗⃟♠️❱${prefix}antiwame *1/0*
+┃✗⃟♠️❱${prefix}mute *on/off*
+┃✗⃟♠️❱${prefix}afk 
+┃✗⃟♠️❱${prefix}ceksewa
+┃✗⃟♠️❱${prefix}kickall
+┃✗⃟♠️❱${prefix}promoteall
+┃✗⃟♠️❱${prefix}demoteall
+┃✗⃟♠️❱${prefix}infogroup
+┃✗⃟♠️❱${prefix}promote
+┃✗⃟♠️❱${prefix}demote
+┃✗⃟♠️❱${prefix}hedsot
+┃✗⃟♠️❱${prefix}listonline
+┃✗⃟♠️❱${prefix}linkgroup
+┃✗⃟♠️❱${prefix}tagall 
+┃✗⃟♠️❱${prefix}leave
+┃✗⃟♠️❱${prefix}kick 
+┃✗⃟♠️❱${prefix}add 
+┃✗⃟♠️❱${prefix}setnamagrup
+┃✗⃟♠️❱${prefix}setppgrup
+┃✗⃟♠️❱${prefix}setdesc
+┃✗⃟♠️❱${prefix}fitnah
+┃✗⃟♠️❱${prefix}sider 
+┃✗⃟♠️❱${prefix}hidetag
+┃✗⃟♠️❱${prefix}hidetag20
+┃✗⃟♠️❱${prefix}totag
+┃✗⃟♠️❱${prefix}kontag @tag|nama
+┃✗⃟♠️❱${prefix}getpp
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}blackpink 
+┃✗⃟♠️❱${prefix}neon 
+┃✗⃟♠️❱${prefix}greenneon 
+┃✗⃟♠️❱${prefix}advancglow 
+┃✗⃟♠️❱${prefix}futureneon 
+┃✗⃟♠️❱${prefix}sandwriting 
+┃✗⃟♠️❱${prefix}sandsummer 
+┃✗⃟♠️❱${prefix}sandengrave 
+┃✗⃟♠️❱${prefix}metaldrak 
+┃✗⃟♠️❱${prefix}neonlight 
+┃✗⃟♠️❱${prefix}holographik
+┃✗⃟♠️❱${prefix}1917 
+┃✗⃟♠️❱${prefix}minion 
+┃✗⃟♠️❱${prefix}deluxesilver 
+┃✗⃟♠️❱${prefix}newyearcard 
+┃✗⃟♠️❱${prefix}bloodfrosted 
+┃✗⃟♠️❱${prefix}halloween
+┃✗⃟♠️❱${prefix}jokerlogo 
+┃✗⃟♠️❱${prefix}fireworksparkles
+┃✗⃟♠️❱${prefix}natureleaves 
+┃✗⃟♠️❱${prefix}bokeh 
+┃✗⃟♠️❱${prefix}toxic 
+┃✗⃟♠️❱${prefix}strawberry 
+┃✗⃟♠️❱${prefix}box3d 
+┃✗⃟♠️❱${prefix}roadwarning 
+┃✗⃟♠️❱${prefix}breakwall 
+┃✗⃟♠️❱${prefix}icecold 
+┃✗⃟♠️❱${prefix}luxury 
+┃✗⃟♠️❱${prefix}cloud 
+┃✗⃟♠️❱${prefix}summersand 
+┃✗⃟♠️❱${prefix}horroblod 
+┃✗⃟♠️❱${prefix}thunder 
+┃✗⃟♠️❱${prefix}pornhub
+┃✗⃟♠️❱${prefix}glitch
+┃✗⃟♠️❱${prefix}avenger
+┃✗⃟♠️❱${prefix}space
+┃✗⃟♠️❱${prefix}ninjalogo
+┃✗⃟♠️❱${prefix}marvelstudio
+┃✗⃟♠️❱${prefix}lionlogo
+┃✗⃟♠️❱${prefix}wolflogo
+┃✗⃟♠️❱${prefix}steel3d
+┃✗⃟♠️❱${prefix}wallgravity
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━ 
+┃✗⃟♠️❱${prefix}chiisaihentai
+┃✗⃟♠️❱${prefix}trap
+┃✗⃟♠️❱${prefix}blowjob
+┃✗⃟♠️❱${prefix}yaoi
+┃✗⃟♠️❱${prefix}ecchi
+┃✗⃟♠️❱${prefix}hentai
+┃✗⃟♠️❱${prefix}ahegao
+┃✗⃟♠️❱${prefix}hololewd
+┃✗⃟♠️❱${prefix}sideroppai
+┃✗⃟♠️❱${prefix}animefeets
+┃✗⃟♠️❱${prefix}animebooty
+┃✗⃟♠️❱${prefix}animethisghss
+┃✗⃟♠️❱${prefix}hentaiparadise
+┃✗⃟♠️❱${prefix}animearmpit
+┃✗⃟♠️❱${prefix}hentaifemdo
+┃✗⃟♠️❱${prefix}lewdanimegirls
+┃✗⃟♠️❱${prefix}biganimetiddies
+┃✗⃟♠️❱${prefix}animebellybutton
+┃✗⃟♠️❱${prefix}hentai4everyone
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}bj
+┃✗⃟♠️❱${prefix}ero
+┃✗⃟♠️❱${prefix}cum
+┃✗⃟♠️❱${prefix}feet
+┃✗⃟♠️❱${prefix}yuri
+┃✗⃟♠️❱${prefix}trap
+┃✗⃟♠️❱${prefix}lewd
+┃✗⃟♠️❱${prefix}feed
+┃✗⃟♠️❱${prefix}eron
+┃✗⃟♠️❱${prefix}solo
+┃✗⃟♠️❱${prefix}gasm
+┃✗⃟♠️❱${prefix}poke
+┃✗⃟♠️❱${prefix}anal
+┃✗⃟♠️❱${prefix}holo
+┃✗⃟♠️❱${prefix}tits
+┃✗⃟♠️❱${prefix}kuni
+┃✗⃟♠️❱${prefix}kiss
+┃✗⃟♠️❱${prefix}erok
+┃✗⃟♠️❱${prefix}smug
+┃✗⃟♠️❱${prefix}baka
+┃✗⃟♠️❱${prefix}solog
+┃✗⃟♠️❱${prefix}feetg
+┃✗⃟♠️❱${prefix}lewdk
+┃✗⃟♠️❱${prefix}waifu
+┃✗⃟♠️❱${prefix}pussy
+┃✗⃟♠️❱${prefix}femdom
+┃✗⃟♠️❱${prefix}cuddle
+┃✗⃟♠️❱${prefix}hentai
+┃✗⃟♠️❱${prefix}eroyuri
+┃✗⃟♠️❱${prefix}cum
+┃✗⃟♠️❱${prefix}blowjob
+┃✗⃟♠️❱${prefix}erofeet
+┃✗⃟♠️❱${prefix}holoero
+┃✗⃟♠️❱${prefix}classic
+┃✗⃟♠️❱${prefix}erokemo
+┃✗⃟♠️❱${prefix}foxgirl
+┃✗⃟♠️❱${prefix}futanari
+┃✗⃟♠️❱${prefix}lewdkemo
+┃✗⃟♠️❱${prefix}wallpaper
+┃✗⃟♠️❱${prefix}pussy
+┃✗⃟♠️❱${prefix}kemonomimi
+┃✗⃟♠️❱${prefix}nsfwavatar
+┃✗⃟♠️❱${prefix}ngif
+┃✗⃟♠️❱${prefix}nsfwnekogif
+┃✗⃟♠️❱${prefix}randomhentaigif
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}kbbi
+┃✗⃟♠️❱${prefix}infogempa
+┃✗⃟♠️❱${prefix}infotsunami
+┃✗⃟♠️❱${prefix}covidindo
+┃✗⃟♠️❱${prefix}covidglobal
+┃✗⃟♠️❱${prefix}jadwaltv
+┃✗⃟♠️❱${prefix}translate
+┃✗⃟♠️❱${prefix}cuaca
+┃✗⃟♠️❱${prefix}wikipedia
+┃✗⃟♠️❱${prefix}jarak
+┃✗⃟♠️❱${prefix}newsinfo
+┃✗⃟♠️❱${prefix}cnnnasional
+┃✗⃟♠️❱${prefix}cnninternasional
+┃✗⃟♠️❱${prefix}cnnindonesia
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}jadibot
+┃✗⃟♠️❱${prefix}stopjadibot
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}shadow
+┃✗⃟♠️❱${prefix}cup 
+┃✗⃟♠️❱${prefix}cup1 
+┃✗⃟♠️❱${prefix}romance 
+┃✗⃟♠️❱${prefix}smoke 
+┃✗⃟♠️❱${prefix}burnpaper 
+┃✗⃟♠️❱${prefix}lovemessage 
+┃✗⃟♠️❱${prefix}undergrass 
+┃✗⃟♠️❱${prefix}love 
+┃✗⃟♠️❱${prefix}coffe
+┃✗⃟♠️❱${prefix}woodheart 
+┃✗⃟♠️❱${prefix}woodenboard 
+┃✗⃟♠️❱${prefix}summed3d 
+┃✗⃟♠️❱${prefix}wolfmetal 
+┃✗⃟♠️❱${prefix}nature3d 
+┃✗⃟♠️❱${prefix}underwater 
+┃✗⃟♠️❱${prefix}golderrose 
+┃✗⃟♠️❱${prefix}summernature 
+┃✗⃟♠️❱${prefix}letterleaves 
+┃✗⃟♠️❱${prefix}glowingneon 
+┃✗⃟♠️❱${prefix}fallleaves 
+┃✗⃟♠️❱${prefix}flamming 
+┃✗⃟♠️❱${prefix}harrypotter 
+┃✗⃟♠️❱${prefix}carvedwood 
+┃✗⃟♠️❱${prefix}tiktok
+┃✗⃟♠️❱${prefix}arcade8bit
+┃✗⃟♠️❱${prefix}battlefield4
+┃✗⃟♠️❱${prefix}pubg
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}ppcp
+┃✗⃟♠️❱${prefix}wetglass
+┃✗⃟♠️❱${prefix}multicolor3d
+┃✗⃟♠️❱${prefix}watercolor
+┃✗⃟♠️❱${prefix}luxurygold
+┃✗⃟♠️❱${prefix}galaxywallpaper
+┃✗⃟♠️❱${prefix}lighttext
+┃✗⃟♠️❱${prefix}beautifulflower
+┃✗⃟♠️❱${prefix}puppycute
+┃✗⃟♠️❱${prefix}royaltext
+┃✗⃟♠️❱${prefix}heartshaped
+┃✗⃟♠️❱${prefix}birthdaycake
+┃✗⃟♠️❱${prefix}galaxystyle
+┃✗⃟♠️❱${prefix}hologram
+┃✗⃟♠️❱${prefix}greenneon
+┃✗⃟♠️❱${prefix}glossychrome
+┃✗⃟♠️❱${prefix}greenbush
+┃✗⃟♠️❱${prefix}metallogo
+┃✗⃟♠️❱${prefix}noeltext
+┃✗⃟♠️❱${prefix}glittergold
+┃✗⃟♠️❱${prefix}textcake
+┃✗⃟♠️❱${prefix}startsnight
+┃✗⃟♠️❱${prefix}wooden3d
+┃✗⃟♠️❱${prefix}textbyname
+┃✗⃟♠️❱${prefix}writegalacy
+┃✗⃟♠️❱${prefix}galaxybat
+┃✗⃟♠️❱${prefix}snow3d
+┃✗⃟♠️❱${prefix}birthdayday
+┃✗⃟♠️❱${prefix}goldplaybutton
+┃✗⃟♠️❱${prefix}silverplaybutton
+┃✗⃟♠️❱${prefix}freefire
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}drakorgoing
+┃✗⃟♠️❱${prefix}Ik21 
+┃✗⃟♠️❱${prefix}wattpad
+┃✗⃟♠️❱${prefix}wattpadsearch
+┃✗⃟♠️❱${prefix}cerpen
+┃✗⃟♠️❱${prefix}ceritahoror
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}quotes
+┃✗⃟♠️❱${prefix}quotesdiLan
+┃✗⃟♠️❱${prefix}quotesanime
+┃✗⃟♠️❱${prefix}quotesimage
+┃✗⃟♠️❱${prefix}faktaunik
+┃✗⃟♠️❱${prefix}katabijak
+┃✗⃟♠️❱${prefix}pantun
+┃✗⃟♠️❱${prefix}randomnama
+┃✗⃟♠️❱${prefix}meme
+┃✗⃟♠️❱${prefix}darkjoke
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱>
+┃✗⃟♠️❱${prefix}bc 
+┃✗⃟♠️❱${prefix}bcgc
+┃✗⃟♠️❱${prefix}tobc
+┃✗⃟♠️❱${prefix}term
+┃✗⃟♠️❱${prefix}eval 
+┃✗⃟♠️❱${prefix}reset
+┃✗⃟♠️❱${prefix}clearall
+┃✗⃟♠️❱${prefix}leaveall
+┃✗⃟♠️❱${prefix}leaveall
+┃✗⃟♠️❱${prefix}join 
+┃✗⃟♠️❱${prefix}shutdown
+┃✗⃟♠️❱${prefix}getquoted
+┃✗⃟♠️❱${prefix}exif 
+┃✗⃟♠️❱${prefix}sewa add/del  
+┃✗⃟♠️❱${prefix}premium add 
+┃✗⃟♠️❱${prefix}premium del
+┃✗⃟♠️❱${prefix}block
+┃✗⃟♠️❱${prefix}unblock
+┃✗⃟♠️❱${prefix}setname
+┃✗⃟♠️❱${prefix}setpp
+┃✗⃟♠️❱${prefix}setbio
+┃✗⃟♠️❱${prefix}setthumb
+┃✗⃟♠️❱${prefix}chat 62xx|pesan
+┃✗⃟♠️❱${prefix}upswvideo
+┃✗⃟♠️❱${prefix}upswteks
+┃✗⃟♠️❱${prefix}upswgif
+┃✗⃟♠️❱${prefix}upswimage
+┃✗⃟♠️❱${prefix}upswvoice
+┃✗⃟♠️❱${prefix}upswsticker
+┃✗⃟♠️❱${prefix}upswaudio
+┃✗⃟♠️❱${prefix}upswlokasi
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}sendbug
+┃✗⃟♠️❱${prefix}senv
+┃✗⃟♠️❱${prefix}bugloc
+┃✗⃟♠️❱${prefix}troli2
+┃✗⃟♠️❱${prefix}bugpc
+┃✗⃟♠️❱${prefix}jadivirgam
+┃✗⃟♠️❱${prefix}jadivirvid
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}loli
+┃✗⃟♠️❱${prefix}manga
+┃✗⃟♠️❱${prefix}anime 
+┃✗⃟♠️❱${prefix}lolivideo
+┃✗⃟♠️❱${prefix}husbu
+┃✗⃟♠️❱${prefix}waifu
+┃✗⃟♠️❱${prefix}milf
+┃✗⃟♠️❱${prefix}neko
+┃✗⃟♠️❱${prefix}kanna
+┃✗⃟♠️❱${prefix}sagiri
+┃✗⃟♠️❱${prefix}hentai
+┃✗⃟♠️❱${prefix}cosplay
+┃✗⃟♠️❱${prefix}wallnime
+┃✗⃟♠️❱${prefix}kusonime
+┃✗⃟♠️❱${prefix}megumin
+┃✗⃟♠️❱${prefix}otakudesu
+┃✗⃟♠️❱${prefix}doujindesu
+┃✗⃟♠️❱${prefix}storyanime
+┃✗⃟♠️❱${prefix}nakanomiku
+┃✗⃟♠️❱${prefix}nakanoikyy
+┃✗⃟♠️❱${prefix}nakanoitsuki
+┃✗⃟♠️❱${prefix}otakuongoing
+┃✗⃟♠️❱${prefix}nhentai *code*
+┃✗⃟♠️❱${prefix}nekopoi *link*
+┃✗⃟♠️❱${prefix}nekopoisearch
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}fb
+┃✗⃟♠️❱${prefix}igdl
+┃✗⃟♠️❱${prefix}igdl2
+┃✗⃟♠️❱${prefix}twitter
+┃✗⃟♠️❱${prefix}tiktok 
+┃✗⃟♠️❱${prefix}play 
+┃✗⃟♠️❱${prefix}ythd 
+┃✗⃟♠️❱${prefix}ytmp3 
+┃✗⃟♠️❱${prefix}ytmp4 
+┃✗⃟♠️❱${prefix}soundcloud 
+┃✗⃟♠️❱${prefix}tiktoknowm 
+┃✗⃟♠️❱${prefix}tiktokaudip
+┃✗⃟♠️❱${prefix}mediafire 
+┃✗⃟♠️❱${prefix}nhentaipdf
+┃✗⃟♠️❱${prefix}groupwa
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}brainly 
+┃✗⃟♠️❱${prefix}shopee 
+┃✗⃟♠️❱${prefix}playstore 
+┃✗⃟♠️❱${prefix}ssweb 
+┃✗⃟♠️❱${prefix}google 
+┃✗⃟♠️❱${prefix}image 
+┃✗⃟♠️❱${prefix}pinterest 
+┃✗⃟♠️❱${prefix}iguser 
+┃✗⃟♠️❱${prefix}igstalk 
+┃✗⃟♠️❱${prefix}githubstalk 
+┃✗⃟♠️❱${prefix}tiktokstalk 
+┃✗⃟♠️❱${prefix}ytsearch
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}tinyurl
+┃✗⃟♠️❱${prefix}cuttly
+┃✗⃟♠️❱${prefix}shorturl
+┃✗⃟♠️❱${prefix}imgtourl 
+┃✗⃟♠️❱${prefix}audiotourl
+┃✗⃟♠️❱${prefix}stickertourl
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}slot
+┃✗⃟♠️❱${prefix}limitgame
+┃✗⃟♠️❱${prefix}gelud @tag
+┃✗⃟♠️❱${prefix}tictactoe @tag
+┃✗⃟♠️❱${prefix}siapaaku
+┃✗⃟♠️❱${prefix}family100
+┃✗⃟♠️❱${prefix}kuismath
+┃✗⃟♠️❱${prefix}asahotak
+┃✗⃟♠️❱${prefix}tebaklirik
+┃✗⃟♠️❱${prefix}tebaklagu
+┃✗⃟♠️❱${prefix}tebakkata
+┃✗⃟♠️❱${prefix}susunkata
+┃✗⃟♠️❱${prefix}kimiakuis
+┃✗⃟♠️❱${prefix}caklontong
+┃✗⃟♠️❱${prefix}tebakjenaka
+┃✗⃟♠️❱${prefix}tebakanime
+┃✗⃟♠️❱${prefix}tebaktebakan
+┃✗⃟♠️❱${prefix}tebakgambar
+┃✗⃟♠️❱${prefix}tebakbendera
+┃✗⃟♠️❱${prefix}suit 
+┃✗⃟♠️❱${prefix}tembak udara/darat/laut
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}dadu
+┃✗⃟♠️❱${prefix}bucinstick
+┃✗⃟♠️❱${prefix}doge
+┃✗⃟♠️❱${prefix}toimg
+┃✗⃟♠️❱${prefix}patrick
+┃✗⃟♠️❱${prefix}ttp 
+┃✗⃟♠️❱${prefix}attp 
+┃✗⃟♠️❱${prefix}stickeranime
+┃✗⃟♠️❱${prefix}semoji 
+┃✗⃟♠️❱${prefix}sticker
+┃✗⃟♠️❱${prefix}smeme 
+┃✗⃟♠️❱${prefix}swm 
+┃✗⃟♠️❱${prefix}take 
+┃✗⃟♠️❱${prefix}tovideo
+┃✗⃟♠️❱${prefix}gawgura
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}wangy
+┃✗⃟♠️❱${prefix}truth
+┃✗⃟♠️❱${prefix}dare
+┃✗⃟♠️❱${prefix}apakah
+┃✗⃟♠️❱${prefix}bisakah
+┃✗⃟♠️❱${prefix}kapankah
+┃✗⃟♠️❱${prefix}rate
+┃✗⃟♠️❱${prefix}jadian
+┃✗⃟♠️❱${prefix}cekbapak
+┃✗⃟♠️❱${prefix}mining
+┃✗⃟♠️❱${prefix}cekwatak
+┃✗⃟♠️❱${prefix}cekmati
+┃✗⃟♠️❱${prefix}citacita
+┃✗⃟♠️❱${prefix}toxic
+┃✗⃟♠️❱${prefix}hobby
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}cecanvietnam
+┃✗⃟♠️❱${prefix}cecanmalaysia
+┃✗⃟♠️❱${prefix}cecankorea
+┃✗⃟♠️❱${prefix}cecanindonesia
+┃✗⃟♠️❱${prefix}cecanjapan
+┃✗⃟♠️❱${prefix}cecanthailand
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}asupan
+┃✗⃟♠️❱${prefix}asupanrandom
+┃✗⃟♠️❱${prefix}asupancecan
+┃✗⃟♠️❱${prefix}asupanhijaber
+┃✗⃟♠️❱${prefix}asupanuhkti
+┃✗⃟♠️❱${prefix}asupanbocil
+┃✗⃟♠️❱${prefix}asupanghea
+┃✗⃟♠️❱${prefix}asupanrika
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}bokep1
+┃✗⃟♠️❱${prefix}bokep2
+┃✗⃟♠️❱${prefix}bokep3
+┃✗⃟♠️❱${prefix}bokep4
+┃✗⃟♠️❱${prefix}bokep5
+┃✗⃟♠️❱${prefix}bokep6
+┃✗⃟♠️❱${prefix}bokep7
+┃✗⃟♠️❱${prefix}bokep8
+┃✗⃟♠️❱${prefix}bokep9
+┃✗⃟♠️❱${prefix}bokep10
+┃✗⃟♠️❱${prefix}bokep11
+┃✗⃟♠️❱${prefix}bokep12
+┃✗⃟♠️❱${prefix}bokep13
+┃✗⃟♠️❱${prefix}bokep14
+┃✗⃟♠️❱${prefix}bokep15
+┃✗⃟♠️❱${prefix}bokep16
+┃✗⃟♠️❱${prefix}bokep17
+┃✗⃟♠️❱${prefix}bokep18
+┃✗⃟♠️❱${prefix}bokep19
+┃✗⃟♠️❱${prefix}bokep20
+┃✗⃟♠️❱${prefix}randombokep
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}joke
+┃✗⃟♠️❱${prefix}wasted
+┃✗⃟♠️❱${prefix}hitler
+┃✗⃟♠️❱${prefix}wanted
+┃✗⃟♠️❱${prefix}trash
+┃✗⃟♠️❱${prefix}circle
+┃✗⃟♠️❱${prefix}blur
+┃✗⃟♠️❱${prefix}affect
+┃✗⃟♠️❱${prefix}picture
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}listsurah
+┃✗⃟♠️❱${prefix}alquran
+┃✗⃟♠️❱${prefix}alquranaudio
+┃✗⃟♠️❱${prefix}asmaulhusna
+┃✗⃟♠️❱${prefix}kisahnabi
+┃✗⃟♠️❱${prefix}jadwalsholat
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱${prefix}addvn
+┃✗⃟♠️❱${prefix}getvn
+┃✗⃟♠️❱${prefix}addimage
+┃✗⃟♠️❱${prefix}getimage
+┃✗⃟♠️❱${prefix}addvideo
+┃✗⃟♠️❱${prefix}getvideo
+┃✗⃟♠️❱${prefix}slow
+┃✗⃟♠️❱${prefix}fast
+┃✗⃟♠️❱${prefix}robot
+┃✗⃟♠️❱${prefix}sound
+┃✗⃟♠️❱${prefix}sound1
+┃✗⃟♠️❱${prefix}sound2
+┃✗⃟♠️❱${prefix}sound3
+┃✗⃟♠️❱${prefix}sound4
+┃✗⃟♠️❱${prefix}sound5
+┃✗⃟♠️❱${prefix}desah
+┗━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
+┃✗⃟♠️❱cekprefix
+┃✗⃟♠️❱${prefix}togel
+┃✗⃟♠️❱${prefix}kodebahasa
+┃✗⃟♠️❱${prefix}update
+┃✗⃟♠️❱${prefix}level
+┃✗⃟♠️❱${prefix}rules
+┃✗⃟♠️❱${prefix}profile
+┃✗⃟♠️❱${prefix}waktu
+┃✗⃟♠️❱${prefix}botstat
+┃✗⃟♠️❱${prefix}sewabot
+┃✗⃟♠️❱${prefix}listsewa
+┃✗⃟♠️❱${prefix}listpremium
+┃✗⃟♠️❱${prefix}listbanned
+┃✗⃟♠️❱${prefix}owner
+┃✗⃟♠️❱${prefix}ping
+┃✗⃟♠️❱${prefix}runtime
+┃✗⃟♠️❱${prefix}donasi
+┃✗⃟♠️❱${prefix}leaderboard
+┃✗⃟♠️❱${prefix}cekpremium
+┃✗⃟♠️❱${prefix}bugreport 
+┃✗⃟♠️❱${prefix}tag 62xxx
+┃✗⃟♠️❱${prefix}tagme
+┃✗⃟♠️❱${prefix}store
+┃✗⃟♠️❱${prefix}get 
+┃✗⃟♠️❱${prefix}inspect
+┃✗⃟♠️❱${prefix}readmore
+┃✗⃟♠️❱${prefix}nulis 
+┃✗⃟♠️❱${prefix}ultah
+┗━━━━━━━━━━━━━
+
+《THANKS TO》
+ 
+${bold}❯ IkyAds${bold}
+${bold}❯ Nino Chan${bold}
+${bold}❯ Xinz Bot${bold}
+${bold}❯ Manurius${bold}
+${bold}❯ Arif${bold}
+${bold}❯ Fathur${bold}
+${bold}❯ Adiwajshing/Baileys${bold}`
 }
