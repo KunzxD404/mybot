@@ -64,7 +64,7 @@ const qrcode = require('qrcode-terminal')
 const qrkode = require("qrcode")
 const Exif = require('./lib/exif');
 const exif = new Exif();
-const { rulesBot, textproMenu, nsfwMenu, randomimageMenu, infoMenu, sessionMenu, photoxyMenu, ephotoMenu, groupMenu, movieMenu, randomMenu, ownerMenu, wibuMenu, downloadMenu, searchMenu, gameMenu, stickerMenu, kerangMenu, cecanMenu, asupanMenu, otherMenu, pornMenu, imageMenu, islamMenu, urlMenu, warMenu, mutualMenu, storageMenu} = require('./message/help.js')
+const { rulesBot, textproMenu, nsfwMenu, randomimageMenu, infoMenu, sessionMenu, photoxyMenu, ephotoMenu, groupMenu, movieMenu, randomMenu, ownerMenu, wibuMenu, downloadMenu, searchMenu, gameMenu, stickerMenu, kerangMenu, cecanMenu, asupanMenu, otherMenu, pornMenu, imageMenu, islamMenu, urlMenu, warMenu, mutualMenu, storageMenu, allMenuu } = require('./message/help.js')
 const { mess } = require('./message/mess')
 const { addCommands, checkCommands, deleteCommands } = require('./lib/autoresp');
 const { getBuffer, getGroupAdmins, getRandom, runtime, sleep } = require('./lib/myfunc')
@@ -116,11 +116,11 @@ let owner = setting.owner
 let gamewaktu = setting.gamewaktu
 let ikyygroup = 'https://chat.whatsapp.com/GDZOBuMkFSCKw6mzDUDoPd'
 let faketeks = '𝙺𝚄𝙽𝚉𝙱𝙾𝚃𝚉︎'
-
-banChats = true
-readPc = true;
-autovn = true;
-autoketik = false;
+let menucommand = true
+let banChats = true
+let readPc = true;
+let autovn = true;
+let autoketik = false;
 
 hit_today = []
 
@@ -261,6 +261,7 @@ if (isCmd) cmdadd()
 hit_today.push(command)		
 const totalhit = JSON.parse(fs.readFileSync('./database/bot/totalcmd.json'))[0].totalcmd
 const q = args.join(' ')
+const mark = `0@s.whatsapp.net`
 const Bfake = fs.readFileSync ('thumbnail.jpg','base64')
 const botNumber = ikyy.user.jid
 const ownerNumber = setting.ownerNumber
@@ -439,7 +440,6 @@ const isRegistered = checkRegisteredUser(sender)
 const fkontak = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { "contactMessage": { "displayName": `${pushname}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${senderr.split('@')[0]}:${senderr.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail":fs.readFileSync('thumbnail.jpg')}}}
 const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} }
 const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Follow My Ig @iam.kunzx", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
- 
 const reply = (teks) => { ikyy.sendMessage(from, teks, text, {quoted:kyy, thumbnail: fakeimage})}
 const katalog = (teks) => {
 res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 111119999, "message": teks, "footerText": "KunzX😈", "thumbnail": fs.readFileSync('thumbnail.jpg'), "surface": 'CATALOG' }}, {quoted:fstatus})
@@ -482,6 +482,21 @@ sendEphemeral: false,
 "mediaType": "2",
 "thumbnailUrl": "https://c.top4top.io/p_2087f30hj1.jpeg",
 "mediaUrl": "https://youtu.be/hiCXp2lbAHA",
+"thumbnail": fs.readFileSync('thumbnail.jpg'),
+"sourceUrl": "",
+},mentionedJid:[sender]}, quoted : fstatus})
+};
+const ftex = = (teks) => {
+ikyy.sendMessage(from, teks, text,{contextInfo :{text: 'hi',
+"forwardingScore": 1000000000,
+isForwarded: false,
+sendEphemeral: false,
+"externalAdReply": {
+"title": `Don't Click Here!!` ,
+"body": `.`,
+"mediaType": "2",
+"thumbnailUrl": "https://c.top4top.io/p_2087f30hj1.jpeg",
+"mediaUrl": "wa.me/6287778886786",
 "thumbnail": fs.readFileSync('thumbnail.jpg'),
 "sourceUrl": "",
 },mentionedJid:[sender]}, quoted : fstatus})
@@ -960,7 +975,7 @@ jawaban = susunkata[sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
 var htmp = randomNomor(100)
 atm.addKoinUser(sender, htmp, _uang)
-await reply(`*_🎮 Susun Kata  🎮_*\n\n*•* *Jawaban Benar🎉*\n*•* *Mendapatkan* : _Rp ${htmp} 💰_\n\nIngin bermain lagi? kirim *${prefix}susunkata*`)
+await reply(`*_🎮 Susun Kata  🎮_*\n\n*•* *Jawaban Benar??*\n*•* *Mendapatkan* : _Rp ${htmp} 💰_\n\nIngin bermain lagi? kirim *${prefix}susunkata*`)
 delete susunkata[sender.split('@')[0]]
 fs.writeFileSync("./database/game/susunkata.json", JSON.stringify(susunkata))
 }
@@ -1129,32 +1144,6 @@ reply(mess.error.api)
    }
 }
 break
-
-//====================>MENU<===================
-
-case 'menu':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (isBanned) return reply(mess.Ban)
-menu = 'https://i.ibb.co/MczZHWG/22f44364b299.jpg'
-buff = await getBuffer(menu)
-teksnya = `W  h  a  t  s  a  a  p - B  o  t`
-buttons = [{buttonId: `.command`,buttonText:{displayText: `Menu Bot`},type:1},{buttonId: `.ikyygroup`,buttonText:{displayText: `Group Bot`},type:1},{buttonId: `.s&k`,buttonText:{displayText: `Syarat & Ketentuan`},type:1}]
-imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail:fs.readFileSync('thumbnail.jpg')})).imageMessage
-buttonsMessage = {footerText:`𝙸𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖: @𝚒𝚊𝚖.𝚔𝚞𝚗𝚣𝚡 
-
-</>𝚅𝚎𝚛𝚜𝚒𝚘𝚗 3.0</> 
-• 𝙿𝚕𝚎𝚊𝚜𝚎 𝙳𝚘𝚗'𝚝 𝙲𝚊𝚕𝚕 𝙱𝚘𝚝𝚜 
-• 𝙿𝚕𝚎𝚊𝚜𝚎 𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝙱𝚘𝚝𝚜 
-• 𝚃𝚑𝚎𝚜𝚎 𝙱𝚘𝚝𝚜 𝙰𝚛𝚎 𝙽??𝚝 𝙷𝚞𝚖𝚊𝚗𝚜 
-
-𝚃𝚢𝚙𝚎: .𝚑𝚎𝚕𝚙 
-𝚒𝚏 𝚗𝚘𝚝 𝚜𝚞𝚙𝚙𝚘𝚛𝚝
-
-𝙺𝚄𝙽𝚉𝙱𝙾𝚃𝚉︎`, imageMessage: imageMsg,
-contentText: teksnya,buttons,headerType:4}
-prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
-ikyy.relayWAMessage(prep)
-break
 case 'f':
 case 'lock':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
@@ -1200,14 +1189,98 @@ if (isBanned) return reply(mess.Ban)
 🌉Date : ${date}
 `)
 break
+
+//====================>MENU<===================
+
+case 'menu': 
+menu = 'https://i.ibb.co/MczZHWG/22f44364b299.jpg'
+buff = await getBuffer(menu)
+teksnya = `W  h  a  t  s  a  a  p - B  o  t`
+buttons = [{buttonId: `.command`,buttonText:{displayText: `Menu Bot`},type:1},{buttonId: `.ikyygroup`,buttonText:{displayText: `Group Bot`},type:1},{buttonId: `.s&k`,buttonText:{displayText: `Syarat & Ketentuan`},type:1}]
+imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail:fs.readFileSync('thumbnail.jpg')})).imageMessage
+buttonsMessage = {footerText:`𝙸𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖: @𝚒𝚊𝚖.𝚔𝚞𝚗𝚣𝚡 
+
+</>𝚅𝚎𝚛𝚜𝚒𝚘𝚗 3.0</> 
+• 𝙿𝚕𝚎𝚊𝚜𝚎 𝙳𝚘𝚗'𝚝 𝙲𝚊𝚕𝚕 𝙱𝚘𝚝𝚜 
+• 𝙿𝚕𝚎𝚊𝚜𝚎 𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝙱𝚘𝚝𝚜 
+• 𝚃𝚑𝚎𝚜𝚎 𝙱𝚘𝚝𝚜 𝙰𝚛𝚎 𝙽𝚘𝚝 𝙷𝚞𝚖𝚊𝚗𝚜 
+
+𝚃𝚢𝚙𝚎: .𝚑𝚎𝚕𝚙 
+𝚒𝚏 𝚗𝚘𝚝 𝚜𝚞𝚙𝚙𝚘𝚛𝚝
+
+𝙺𝚄𝙽𝚉𝙱𝙾𝚃𝚉︎`, imageMessage: imageMsg,
+contentText: teksnya,buttons,headerType:4}
+prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
+ikyy.relayWAMessage(prep)
+break
 case 'command':
 case 'help':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
+if(menucommand == false){
 timestampe = speed();
 latensie = speed() - timestampe
-koko = `0@s.whatsapp.net`
-var menu =` ${ucapanWaktu} @${sender.split("@")[0]}😉
+reply(`${ucapanWaktu} ${pushname}${bold}
+
+《${bold}BOT INFO${bold}》
+
+${bold}Creator : KunzxD${bold}
+${bold}Nama Bot : Kunz Botz${bold}
+${bold}Prefix${bold} : ${prefix}
+${bold}Lib : Baileys${bold}
+${bold}Tanggal${bold} : ${bold}${date}${bold}
+${bold}Jam${bold} : ${bold}${time}${bold}
+${bold}Hit today : ${hit_today.length}${bold}
+${bold}Hit all : ${hitall}${bold}
+${bold}Pengguna : ${_registered.length}${bold}
+
+《USER INFO》
+
+${bold}Name : ${pushname}${bold}
+${bold}Bio${bold} : ${p1 ? `${p1.status}` : '-'}${bold}
+${bold}Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
+
+《LIST MENU》
+
+✗⃟♠️❱${prefix}${bold}groupmenu${bold}
+✗⃟♠️❱${prefix}${bold}ownermenu${bold}
+✗⃟♠️❱${prefix}${bold}stickermenu${bold}
+✗⃟♠️❱${prefix}${bold}textpromenu${bold}
+✗⃟♠️❱${prefix}${bold}infomenu${bold}
+✗⃟♠️❱${prefix}${bold}mutualmenu${bold}
+✗⃟♠️❱${prefix}${bold}sessionmenu${bold}
+✗⃟♠️❱${prefix}${bold}randommenu${bold}
+✗⃟♠️❱${prefix}${bold}randomimagemenu${bold}
+✗⃟♠️❱${prefix}${bold}randomtextmenu${bold}
+✗⃟♠️❱${prefix}${bold}wibumenu${bold}
+✗⃟♠️❱${prefix}${bold}nsfwmenu${bold}
+✗⃟♠️❱${prefix}${bold}photoxymenu${bold}
+✗⃟♠️❱${prefix}${bold}ephotomenu${bold}
+✗⃟♠️❱${prefix}${bold}imagemenu${bold}
+✗⃟♠️❱${prefix}${bold}downloadmenu${bold}
+✗⃟♠️❱${prefix}${bold}searchmenu${bold}
+✗⃟♠️❱${prefix}${bold}moviemenu${bold}
+✗⃟♠️❱${prefix}${bold}urlmenu${bold}
+✗⃟♠️❱${prefix}${bold}gamemenu${bold}
+✗⃟♠️❱${prefix}${bold}kerangmenu${bold}
+✗⃟♠️❱${prefix}${bold}asupanmenu${bold}
+✗⃟♠️❱${prefix}${bold}cecanmenu${bold}
+✗⃟♠️❱${prefix}${bold}islammenu${bold}
+✗⃟♠️❱${prefix}${bold}pornmenu${bold}
+✗⃟♠️❱${prefix}${bold}warmenu${bold}
+✗⃟♠️❱${prefix}${bold}othermenu${bold}
+
+《THANKS TO》
+
+${bold}❯ IkyAds${bold}
+${bold}❯ Nino Chan${bold}
+${bold}❯ Xinz Bot${bold}
+${bold}❯ Manurius${bold}
+${bold}❯ Arif${bold}
+${bold}❯ Fathur${bold}
+${bold}❯ Adiwajshing/Baileys${bold}`)
+} else if(menucommand = true){ 
+menu =` ${ucapanWaktu} @${sender.split("@")[0]}😉
 
 ━[ *KUNZ BOTZ* ]━
 
@@ -1229,19 +1302,19 @@ var menu =` ${ucapanWaktu} @${sender.split("@")[0]}😉
 
 ❱ *Pengguna* : *${_registered.length}*
 `
-ikyy.sendMessage(from, { contentText: `${menu}`, footerText: `Official BOT By @${koko.split('@')[0]}`, 
+ikyy.sendMessage(from, { contentText: `${menu}`, footerText: `Official BOT By @${mark.split('@')[0]}`, 
 buttons: [{ buttonId: `${prefix}botstat`, buttonText: { displayText: 'STATUS' }, type: 1 }], 
 headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '',
 jpegThumbnail: fs.readFileSync("thumbnail.jpg"), 
-contextInfo: {mentionedJid: [sender, koko, owner + "@s.whatsapp.net"]}}}, 'buttonsMessage')
+contextInfo: {mentionedJid: [sender, mark, owner + "@s.whatsapp.net"]}}}, 'buttonsMessage')
 setTimeout( () => {
-   list = []
-   listmenu = [`runtime`,`infobot`,`allmenu`,`groupmenu`,`ownermenu`,`warmenu`,`photoxymenu`,`linkmenu`,`ephotomenu`,`mutualmenu`,`randomimagemenu`,`randommenu`,`nsfwanime`,`stickermenu`,`gamemenu`,`downloadmenu`,`infomenu`,`sessionmenu`,`asupanmenu`,`cecanmenu`,`pornmenu`,`wibumenu`,`searchmenu`,`islammenu`,`kerangmenu`,`storagemenu`,`othermenu`,`owner`,`ikyygroup`,`store`]
-   listmenuu = [`Runtime`,`InfoBot`,`All Menu Bot`,`Menu Group`,`Menu Owner`,`Menu War`,`Menu Photo Oky`,`Menu Link`,`Menu Ephoto`,`Menu Mutual`,`Menu Random Image`,`Menu Random`,`Menu Nsfw Anime`,`Menu Sticker`,`Menu Game`,`Menu Downloader`,`Menu Info`,`Menu Session`,`Menu Asupan`,`Menu Cecan`,`Menu Bokep`,`Menu Wibu`,`Menu Cari`,`Menu Islam`,`Menu Kerang`,`Menu Storage`,`Menu Other`,`OwnerBot`,`Official Group`,`Store`]
-   nombor = 1
-   startnum = 0
-   for (let x of listmenu) {
-   const yy = {title: 'menu ke' + nombor++,
+list = []
+listmenu = [`runtime`,`infobot`,`allmenu`,`groupmenu`,`ownermenu`,`warmenu`,`photoxymenu`,`linkmenu`,`ephotomenu`,`mutualmenu`,`randomimagemenu`,`randommenu`,`nsfwanime`,`stickermenu`,`gamemenu`,`downloadmenu`,`infomenu`,`sessionmenu`,`asupanmenu`,`cecanmenu`,`pornmenu`,`wibumenu`,`searchmenu`,`islammenu`,`kerangmenu`,`storagemenu`,`othermenu`,`owner`,`ikyygroup`,`store`]
+listmenuu = [`Runtime`,`InfoBot`,`All Menu Bot`,`Menu Group`,`Menu Owner`,`Menu War`,`Menu Photo Oky`,`Menu Link`,`Menu Ephoto`,`Menu Mutual`,`Menu Random Image`,`Menu Random`,`Menu Nsfw Anime`,`Menu Sticker`,`Menu Game`,`Menu Downloader`,`Menu Info`,`Menu Session`,`Menu Asupan`,`Menu Cecan`,`Menu Bokep`,`Menu Wibu`,`Menu Cari`,`Menu Islam`,`Menu Kerang`,`Menu Storage`,`Menu Other`,`OwnerBot`,`Official Group`,`Store`]
+nombor = 1
+startnum = 0
+for (let x of listmenu) {
+const yy = {title: 'menu ke' + nombor++,
 rows: [
    {
 title: `${listmenuu[startnum++]}`,
@@ -1252,11 +1325,10 @@ rowId: `${prefix}${x}`
    }
 list.push(yy)
    }
-   listmsg(from, `Please select the bot menu here\n\n🌉Day ${week} ${weton} \n🌉Date : ${date}`, `  `, list)
-  }, 5)
+listmsg(from, `Please select the bot menu here\n\n🌉Day ${week} ${weton} \n🌉Date : ${date}`, `  `, list)
+  }, 5)}
 break
 case 'allmenu':
-case 'help':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
 buf = fs.readFileSync('thumbnail.jpg') 
@@ -1268,560 +1340,7 @@ res = await ikyy.prepareMessageFromContent(from,{
 "productImage": imeg,
 "productId": "999999999",
 "title": `KunzX😈`,
-"description": `${bold}👑Owner Name : KunzxD${bold}
-${bold}😈Bot Name : Kunz Botz${bold}
-${bold}📍Prefix : 「${prefix}」${bold}
-${bold}🗄Lib : Baileys${bold}
-${bold}♨️Hit today : ${hit_today.length}${bold}
-${bold}🐣Hit All : ${hitall}${bold}
-${bold}🙆‍♂️Total User : ${_registered.length}${bold}
-${bold}🗓Calender : ${date}${bold}
-${bold}⏰Time : ${time}${bold}
-${bold}⏳Runtime :${bold}
-${bold}${runtime(process.uptime())}${bold}
- 
-《𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊》
- 
-${bold}✗⃟♠️❱Name : ${pushname}${bold}
-${bold}✗⃟♠️❱Bio : ${p1 ? `${p1.status}` : '-'}${bold}
-${bold}✗⃟♠️❱Nomor : @${sender.split("@")[0]}${bold}
-${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
-
-《 𝙇𝙄𝙎𝙏 𝙈𝙀𝙉𝙐 》
-
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}opengc
-┃✗⃟♠️❱${prefix}closegc
-┃✗⃟♠️❱${prefix}welcome *1/0*
-┃✗⃟♠️❱${prefix}antilink *1/0*
-┃✗⃟♠️❱${prefix}antiwame *1/0*
-┃✗⃟♠️❱${prefix}mute *on/off*
-┃✗⃟♠️❱${prefix}afk 
-┃✗⃟♠️❱${prefix}ceksewa
-┃✗⃟♠️❱${prefix}kickall
-┃✗⃟♠️❱${prefix}promoteall
-┃✗⃟♠️❱${prefix}demoteall
-┃✗⃟♠️❱${prefix}infogroup
-┃✗⃟♠️❱${prefix}promote
-┃✗⃟♠️❱${prefix}demote
-┃✗⃟♠️❱${prefix}hedsot
-┃✗⃟♠️❱${prefix}listonline
-┃✗⃟♠️❱${prefix}linkgroup
-┃✗⃟♠️❱${prefix}tagall 
-┃✗⃟♠️❱${prefix}leave
-┃✗⃟♠️❱${prefix}kick 
-┃✗⃟♠️❱${prefix}add 
-┃✗⃟♠️❱${prefix}setnamagrup
-┃✗⃟♠️❱${prefix}setppgrup
-┃✗⃟♠️❱${prefix}setdesc
-┃✗⃟♠️❱${prefix}fitnah
-┃✗⃟♠️❱${prefix}sider 
-┃✗⃟♠️❱${prefix}hidetag
-┃✗⃟♠️❱${prefix}hidetag20
-┃✗⃟♠️❱${prefix}totag
-┃✗⃟♠️❱${prefix}kontag @tag|nama
-┃✗⃟♠️❱${prefix}getpp
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}blackpink 
-┃✗⃟♠️❱${prefix}neon 
-┃✗⃟♠️❱${prefix}greenneon 
-┃✗⃟♠️❱${prefix}advancglow 
-┃✗⃟♠️❱${prefix}futureneon 
-┃✗⃟♠️❱${prefix}sandwriting 
-┃✗⃟♠️❱${prefix}sandsummer 
-┃✗⃟♠️❱${prefix}sandengrave 
-┃✗⃟♠️❱${prefix}metaldrak 
-┃✗⃟♠️❱${prefix}neonlight 
-┃✗⃟♠️❱${prefix}holographik
-┃✗⃟♠️❱${prefix}1917 
-┃✗⃟♠️❱${prefix}minion 
-┃✗⃟♠️❱${prefix}deluxesilver 
-┃✗⃟♠️❱${prefix}newyearcard 
-┃✗⃟♠️❱${prefix}bloodfrosted 
-┃✗⃟♠️❱${prefix}halloween
-┃✗⃟♠️❱${prefix}jokerlogo 
-┃✗⃟♠️❱${prefix}fireworksparkles
-┃✗⃟♠️❱${prefix}natureleaves 
-┃✗⃟♠️❱${prefix}bokeh 
-┃✗⃟♠️❱${prefix}toxic 
-┃✗⃟♠️❱${prefix}strawberry 
-┃✗⃟♠️❱${prefix}box3d 
-┃✗⃟♠️❱${prefix}roadwarning 
-┃✗⃟♠️❱${prefix}breakwall 
-┃✗⃟♠️❱${prefix}icecold 
-┃✗⃟♠️❱${prefix}luxury 
-┃✗⃟♠️❱${prefix}cloud 
-┃✗⃟♠️❱${prefix}summersand 
-┃✗⃟♠️❱${prefix}horroblod 
-┃✗⃟♠️❱${prefix}thunder 
-┃✗⃟♠️❱${prefix}pornhub
-┃✗⃟♠️❱${prefix}glitch
-┃✗⃟♠️❱${prefix}avenger
-┃✗⃟♠️❱${prefix}space
-┃✗⃟♠️❱${prefix}ninjalogo
-┃✗⃟♠️❱${prefix}marvelstudio
-┃✗⃟♠️❱${prefix}lionlogo
-┃✗⃟♠️❱${prefix}wolflogo
-┃✗⃟♠️❱${prefix}steel3d
-┃✗⃟♠️❱${prefix}wallgravity
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━ 
-┃✗⃟♠️❱${prefix}chiisaihentai
-┃✗⃟♠️❱${prefix}trap
-┃✗⃟♠️❱${prefix}blowjob
-┃✗⃟♠️❱${prefix}yaoi
-┃✗⃟♠️❱${prefix}ecchi
-┃✗⃟♠️❱${prefix}hentai
-┃✗⃟♠️❱${prefix}ahegao
-┃✗⃟♠️❱${prefix}hololewd
-┃✗⃟♠️❱${prefix}sideroppai
-┃✗⃟♠️❱${prefix}animefeets
-┃✗⃟♠️❱${prefix}animebooty
-┃✗⃟♠️❱${prefix}animethisghss
-┃✗⃟♠️❱${prefix}hentaiparadise
-┃✗⃟♠️❱${prefix}animearmpit
-┃✗⃟♠️❱${prefix}hentaifemdo
-┃✗⃟♠️❱${prefix}lewdanimegirls
-┃✗⃟♠️❱${prefix}biganimetiddies
-┃✗⃟♠️❱${prefix}animebellybutton
-┃✗⃟♠️❱${prefix}hentai4everyone
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}bj
-┃✗⃟♠️❱${prefix}ero
-┃✗⃟♠️❱${prefix}cum
-┃✗⃟♠️❱${prefix}feet
-┃✗⃟♠️❱${prefix}yuri
-┃✗⃟♠️❱${prefix}trap
-┃✗⃟♠️❱${prefix}lewd
-┃✗⃟♠️❱${prefix}feed
-┃✗⃟♠️❱${prefix}eron
-┃✗⃟♠️❱${prefix}solo
-┃✗⃟♠️❱${prefix}gasm
-┃✗⃟♠️❱${prefix}poke
-┃✗⃟♠️❱${prefix}anal
-┃✗⃟♠️❱${prefix}holo
-┃✗⃟♠️❱${prefix}tits
-┃✗⃟♠️❱${prefix}kuni
-┃✗⃟♠️❱${prefix}kiss
-┃✗⃟♠️❱${prefix}erok
-┃✗⃟♠️❱${prefix}smug
-┃✗⃟♠️❱${prefix}baka
-┃✗⃟♠️❱${prefix}solog
-┃✗⃟♠️❱${prefix}feetg
-┃✗⃟♠️❱${prefix}lewdk
-┃✗⃟♠️❱${prefix}waifu
-┃✗⃟♠️❱${prefix}pussy
-┃✗⃟♠️❱${prefix}femdom
-┃✗⃟♠️❱${prefix}cuddle
-┃✗⃟♠️❱${prefix}hentai
-┃✗⃟♠️❱${prefix}eroyuri
-┃✗⃟♠️❱${prefix}cum
-┃✗⃟♠️❱${prefix}blowjob
-┃✗⃟♠️❱${prefix}erofeet
-┃✗⃟♠️❱${prefix}holoero
-┃✗⃟♠️❱${prefix}classic
-┃✗⃟♠️❱${prefix}erokemo
-┃✗⃟♠️❱${prefix}foxgirl
-┃✗⃟♠️❱${prefix}futanari
-┃✗⃟♠️❱${prefix}lewdkemo
-┃✗⃟♠️❱${prefix}wallpaper
-┃✗⃟♠️❱${prefix}pussy
-┃✗⃟♠️❱${prefix}kemonomimi
-┃✗⃟♠️❱${prefix}nsfwavatar
-┃✗⃟♠️❱${prefix}ngif
-┃✗⃟♠️❱${prefix}nsfwnekogif
-┃✗⃟♠️❱${prefix}randomhentaigif
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}kbbi
-┃✗⃟♠️❱${prefix}infogempa
-┃✗⃟♠️❱${prefix}infotsunami
-┃✗⃟♠️❱${prefix}covidindo
-┃✗⃟♠️❱${prefix}covidglobal
-┃✗⃟♠️❱${prefix}jadwaltv
-┃✗⃟♠️❱${prefix}translate
-┃✗⃟♠️❱${prefix}cuaca
-┃✗⃟♠️❱${prefix}wikipedia
-┃✗⃟♠️❱${prefix}jarak
-┃✗⃟♠️❱${prefix}newsinfo
-┃✗⃟♠️❱${prefix}cnnnasional
-┃✗⃟♠️❱${prefix}cnninternasional
-┃✗⃟♠️❱${prefix}cnnindonesia
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}jadibot
-┃✗⃟♠️❱${prefix}stopjadibot
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}shadow
-┃✗⃟♠️❱${prefix}cup 
-┃✗⃟♠️❱${prefix}cup1 
-┃✗⃟♠️❱${prefix}romance 
-┃✗⃟♠️❱${prefix}smoke 
-┃✗⃟♠️❱${prefix}burnpaper 
-┃✗⃟♠️❱${prefix}lovemessage 
-┃✗⃟♠️❱${prefix}undergrass 
-┃✗⃟♠️❱${prefix}love 
-┃✗⃟♠️❱${prefix}coffe
-┃✗⃟♠️❱${prefix}woodheart 
-┃✗⃟♠️❱${prefix}woodenboard 
-┃✗⃟♠️❱${prefix}summed3d 
-┃✗⃟♠️❱${prefix}wolfmetal 
-┃✗⃟♠️❱${prefix}nature3d 
-┃✗⃟♠️❱${prefix}underwater 
-┃✗⃟♠️❱${prefix}golderrose 
-┃✗⃟♠️❱${prefix}summernature 
-┃✗⃟♠️❱${prefix}letterleaves 
-┃✗⃟♠️❱${prefix}glowingneon 
-┃✗⃟♠️❱${prefix}fallleaves 
-┃✗⃟♠️❱${prefix}flamming 
-┃✗⃟♠️❱${prefix}harrypotter 
-┃✗⃟♠️❱${prefix}carvedwood 
-┃✗⃟♠️❱${prefix}tiktok
-┃✗⃟♠️❱${prefix}arcade8bit
-┃✗⃟♠️❱${prefix}battlefield4
-┃✗⃟♠️❱${prefix}pubg
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}ppcp
-┃✗⃟♠️❱${prefix}wetglass
-┃✗⃟♠️❱${prefix}multicolor3d
-┃✗⃟♠️❱${prefix}watercolor
-┃✗⃟♠️❱${prefix}luxurygold
-┃✗⃟♠️❱${prefix}galaxywallpaper
-┃✗⃟♠️❱${prefix}lighttext
-┃✗⃟♠️❱${prefix}beautifulflower
-┃✗⃟♠️❱${prefix}puppycute
-┃✗⃟♠️❱${prefix}royaltext
-┃✗⃟♠️❱${prefix}heartshaped
-┃✗⃟♠️❱${prefix}birthdaycake
-┃✗⃟♠️❱${prefix}galaxystyle
-┃✗⃟♠️❱${prefix}hologram
-┃✗⃟♠️❱${prefix}greenneon
-┃✗⃟♠️❱${prefix}glossychrome
-┃✗⃟♠️❱${prefix}greenbush
-┃✗⃟♠️❱${prefix}metallogo
-┃✗⃟♠️❱${prefix}noeltext
-┃✗⃟♠️❱${prefix}glittergold
-┃✗⃟♠️❱${prefix}textcake
-┃✗⃟♠️❱${prefix}startsnight
-┃✗⃟♠️❱${prefix}wooden3d
-┃✗⃟♠️❱${prefix}textbyname
-┃✗⃟♠️❱${prefix}writegalacy
-┃✗⃟♠️❱${prefix}galaxybat
-┃✗⃟♠️❱${prefix}snow3d
-┃✗⃟♠️❱${prefix}birthdayday
-┃✗⃟♠️❱${prefix}goldplaybutton
-┃✗⃟♠️❱${prefix}silverplaybutton
-┃✗⃟♠️❱${prefix}freefire
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}drakorgoing
-┃✗⃟♠️❱${prefix}Ik21 
-┃✗⃟♠️❱${prefix}wattpad
-┃✗⃟♠️❱${prefix}wattpadsearch
-┃✗⃟♠️❱${prefix}cerpen
-┃✗⃟♠️❱${prefix}ceritahoror
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}quotes
-┃✗⃟♠️❱${prefix}quotesdiLan
-┃✗⃟♠️❱${prefix}quotesanime
-┃✗⃟♠️❱${prefix}quotesimage
-┃✗⃟♠️❱${prefix}faktaunik
-┃✗⃟♠️❱${prefix}katabijak
-┃✗⃟♠️❱${prefix}pantun
-┃✗⃟♠️❱${prefix}randomnama
-┃✗⃟♠️❱${prefix}meme
-┃✗⃟♠️❱${prefix}darkjoke
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱>
-┃✗⃟♠️❱${prefix}bc 
-┃✗⃟♠️❱${prefix}bcgc
-┃✗⃟♠️❱${prefix}tobc
-┃✗⃟♠️❱${prefix}term
-┃✗⃟♠️❱${prefix}eval 
-┃✗⃟♠️❱${prefix}reset
-┃✗⃟♠️❱${prefix}clearall
-┃✗⃟♠️❱${prefix}leaveall
-┃✗⃟♠️❱${prefix}leaveall
-┃✗⃟♠️❱${prefix}join 
-┃✗⃟♠️❱${prefix}shutdown
-┃✗⃟♠️❱${prefix}getquoted
-┃✗⃟♠️❱${prefix}exif 
-┃✗⃟♠️❱${prefix}sewa add/del  
-┃✗⃟♠️❱${prefix}premium add 
-┃✗⃟♠️❱${prefix}premium del
-┃✗⃟♠️❱${prefix}block
-┃✗⃟♠️❱${prefix}unblock
-┃✗⃟♠️❱${prefix}setname
-┃✗⃟♠️❱${prefix}setpp
-┃✗⃟♠️❱${prefix}setbio
-┃✗⃟♠️❱${prefix}setthumb
-┃✗⃟♠️❱${prefix}chat 62xx|pesan
-┃✗⃟♠️❱${prefix}upswvideo
-┃✗⃟♠️❱${prefix}upswteks
-┃✗⃟♠️❱${prefix}upswgif
-┃✗⃟♠️❱${prefix}upswimage
-┃✗⃟♠️❱${prefix}upswvoice
-┃✗⃟♠️❱${prefix}upswsticker
-┃✗⃟♠️❱${prefix}upswaudio
-┃✗⃟♠️❱${prefix}upswlokasi
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}sendbug
-┃✗⃟♠️❱${prefix}senv
-┃✗⃟♠️❱${prefix}bugloc
-┃✗⃟♠️❱${prefix}troli2
-┃✗⃟♠️❱${prefix}bugpc
-┃✗⃟♠️❱${prefix}jadivirgam
-┃✗⃟♠️❱${prefix}jadivirvid
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}loli
-┃✗⃟♠️❱${prefix}manga
-┃✗⃟♠️❱${prefix}anime 
-┃✗⃟♠️❱${prefix}lolivideo
-┃✗⃟♠️❱${prefix}husbu
-┃✗⃟♠️❱${prefix}waifu
-┃✗⃟♠️❱${prefix}milf
-┃✗⃟♠️❱${prefix}neko
-┃✗⃟♠️❱${prefix}kanna
-┃✗⃟♠️❱${prefix}sagiri
-┃✗⃟♠️❱${prefix}hentai
-┃✗⃟♠️❱${prefix}cosplay
-┃✗⃟♠️❱${prefix}wallnime
-┃✗⃟♠️❱${prefix}kusonime
-┃✗⃟♠️❱${prefix}megumin
-┃✗⃟♠️❱${prefix}otakudesu
-┃✗⃟♠️❱${prefix}doujindesu
-┃✗⃟♠️❱${prefix}storyanime
-┃✗⃟♠️❱${prefix}nakanomiku
-┃✗⃟♠️❱${prefix}nakanoikyy
-┃✗⃟♠️❱${prefix}nakanoitsuki
-┃✗⃟♠️❱${prefix}otakuongoing
-┃✗⃟♠️❱${prefix}nhentai *code*
-┃✗⃟♠️❱${prefix}nekopoi *link*
-┃✗⃟♠️❱${prefix}nekopoisearch
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}fb
-┃✗⃟♠️❱${prefix}igdl
-┃✗⃟♠️❱${prefix}igdl2
-┃✗⃟♠️❱${prefix}twitter
-┃✗⃟♠️❱${prefix}tiktok 
-┃✗⃟♠️❱${prefix}play 
-┃✗⃟♠️❱${prefix}ythd 
-┃✗⃟♠️❱${prefix}ytmp3 
-┃✗⃟♠️❱${prefix}ytmp4 
-┃✗⃟♠️❱${prefix}soundcloud 
-┃✗⃟♠️❱${prefix}tiktoknowm 
-┃✗⃟♠️❱${prefix}tiktokaudip
-┃✗⃟♠️❱${prefix}mediafire 
-┃✗⃟♠️❱${prefix}nhentaipdf
-┃✗⃟♠️❱${prefix}groupwa
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}brainly 
-┃✗⃟♠️❱${prefix}shopee 
-┃✗⃟♠️❱${prefix}playstore 
-┃✗⃟♠️❱${prefix}ssweb 
-┃✗⃟♠️❱${prefix}google 
-┃✗⃟♠️❱${prefix}image 
-┃✗⃟♠️❱${prefix}pinterest 
-┃✗⃟♠️❱${prefix}iguser 
-┃✗⃟♠️❱${prefix}igstalk 
-┃✗⃟♠️❱${prefix}githubstalk 
-┃✗⃟♠️❱${prefix}tiktokstalk 
-┃✗⃟♠️❱${prefix}ytsearch
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}tinyurl
-┃✗⃟♠️❱${prefix}cuttly
-┃✗⃟♠️❱${prefix}shorturl
-┃✗⃟♠️❱${prefix}imgtourl 
-┃✗⃟♠️❱${prefix}audiotourl
-┃✗⃟♠️❱${prefix}stickertourl
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}slot
-┃✗⃟♠️❱${prefix}limitgame
-┃✗⃟♠️❱${prefix}gelud @tag
-┃✗⃟♠️❱${prefix}tictactoe @tag
-┃✗⃟♠️❱${prefix}siapaaku
-┃✗⃟♠️❱${prefix}family100
-┃✗⃟♠️❱${prefix}kuismath
-┃✗⃟♠️❱${prefix}asahotak
-┃✗⃟♠️❱${prefix}tebaklirik
-┃✗⃟♠️❱${prefix}tebaklagu
-┃✗⃟♠️❱${prefix}tebakkata
-┃✗⃟♠️❱${prefix}susunkata
-┃✗⃟♠️❱${prefix}kimiakuis
-┃✗⃟♠️❱${prefix}caklontong
-┃✗⃟♠️❱${prefix}tebakjenaka
-┃✗⃟♠️❱${prefix}tebakanime
-┃✗⃟♠️❱${prefix}tebaktebakan
-┃✗⃟♠️❱${prefix}tebakgambar
-┃✗⃟♠️❱${prefix}tebakbendera
-┃✗⃟♠️❱${prefix}suit 
-┃✗⃟♠️❱${prefix}tembak udara/darat/laut
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}dadu
-┃✗⃟♠️❱${prefix}bucinstick
-┃✗⃟♠️❱${prefix}doge
-┃✗⃟♠️❱${prefix}toimg
-┃✗⃟♠️❱${prefix}patrick
-┃✗⃟♠️❱${prefix}ttp 
-┃✗⃟♠️❱${prefix}attp 
-┃✗⃟♠️❱${prefix}stickeranime
-┃✗⃟♠️❱${prefix}semoji 
-┃✗⃟♠️❱${prefix}sticker
-┃✗⃟♠️❱${prefix}smeme 
-┃✗⃟♠️❱${prefix}swm 
-┃✗⃟♠️❱${prefix}take 
-┃✗⃟♠️❱${prefix}tovideo
-┃✗⃟♠️❱${prefix}gawgura
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}wangy
-┃✗⃟♠️❱${prefix}truth
-┃✗⃟♠️❱${prefix}dare
-┃✗⃟♠️❱${prefix}apakah
-┃✗⃟♠️❱${prefix}bisakah
-┃✗⃟♠️❱${prefix}kapankah
-┃✗⃟♠️❱${prefix}rate
-┃✗⃟♠️❱${prefix}jadian
-┃✗⃟♠️❱${prefix}cekbapak
-┃✗⃟♠️❱${prefix}mining
-┃✗⃟♠️❱${prefix}cekwatak
-┃✗⃟♠️❱${prefix}cekmati
-┃✗⃟♠️❱${prefix}citacita
-┃✗⃟♠️❱${prefix}toxic
-┃✗⃟♠️❱${prefix}hobby
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}cecanvietnam
-┃✗⃟♠️❱${prefix}cecanmalaysia
-┃✗⃟♠️❱${prefix}cecankorea
-┃✗⃟♠️❱${prefix}cecanindonesia
-┃✗⃟♠️❱${prefix}cecanjapan
-┃✗⃟♠️❱${prefix}cecanthailand
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}asupan
-┃✗⃟♠️❱${prefix}asupanrandom
-┃✗⃟♠️❱${prefix}asupancecan
-┃✗⃟♠️❱${prefix}asupanhijaber
-┃✗⃟♠️❱${prefix}asupanuhkti
-┃✗⃟♠️❱${prefix}asupanbocil
-┃✗⃟♠️❱${prefix}asupanghea
-┃✗⃟♠️❱${prefix}asupanrika
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}bokep1
-┃✗⃟♠️❱${prefix}bokep2
-┃✗⃟♠️❱${prefix}bokep3
-┃✗⃟♠️❱${prefix}bokep4
-┃✗⃟♠️❱${prefix}bokep5
-┃✗⃟♠️❱${prefix}bokep6
-┃✗⃟♠️❱${prefix}bokep7
-┃✗⃟♠️❱${prefix}bokep8
-┃✗⃟♠️❱${prefix}bokep9
-┃✗⃟♠️❱${prefix}bokep10
-┃✗⃟♠️❱${prefix}bokep11
-┃✗⃟♠️❱${prefix}bokep12
-┃✗⃟♠️❱${prefix}bokep13
-┃✗⃟♠️❱${prefix}bokep14
-┃✗⃟♠️❱${prefix}bokep15
-┃✗⃟♠️❱${prefix}bokep16
-┃✗⃟♠️❱${prefix}bokep17
-┃✗⃟♠️❱${prefix}bokep18
-┃✗⃟♠️❱${prefix}bokep19
-┃✗⃟♠️❱${prefix}bokep20
-┃✗⃟♠️❱${prefix}randombokep
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}joke
-┃✗⃟♠️❱${prefix}wasted
-┃✗⃟♠️❱${prefix}hitler
-┃✗⃟♠️❱${prefix}wanted
-┃✗⃟♠️❱${prefix}trash
-┃✗⃟♠️❱${prefix}circle
-┃✗⃟♠️❱${prefix}blur
-┃✗⃟♠️❱${prefix}affect
-┃✗⃟♠️❱${prefix}picture
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}listsurah
-┃✗⃟♠️❱${prefix}alquran
-┃✗⃟♠️❱${prefix}alquranaudio
-┃✗⃟♠️❱${prefix}asmaulhusna
-┃✗⃟♠️❱${prefix}kisahnabi
-┃✗⃟♠️❱${prefix}jadwalsholat
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱${prefix}addvn
-┃✗⃟♠️❱${prefix}getvn
-┃✗⃟♠️❱${prefix}addimage
-┃✗⃟♠️❱${prefix}getimage
-┃✗⃟♠️❱${prefix}addvideo
-┃✗⃟♠️❱${prefix}getvideo
-┃✗⃟♠️❱${prefix}slow
-┃✗⃟♠️❱${prefix}fast
-┃✗⃟♠️❱${prefix}robot
-┃✗⃟♠️❱${prefix}sound
-┃✗⃟♠️❱${prefix}sound1
-┃✗⃟♠️❱${prefix}sound2
-┃✗⃟♠️❱${prefix}sound3
-┃✗⃟♠️❱${prefix}sound4
-┃✗⃟♠️❱${prefix}sound5
-┃✗⃟♠️❱${prefix}desah
-┗━━━━━━━━━━━━━
-┏━━━━━━━━━━━━━
-┃✗⃟♠️❱cekprefix
-┃✗⃟♠️❱${prefix}togel
-┃✗⃟♠️❱${prefix}kodebahasa
-┃✗⃟♠️❱${prefix}update
-┃✗⃟♠️❱${prefix}level
-┃✗⃟♠️❱${prefix}rules
-┃✗⃟♠️❱${prefix}profile
-┃✗⃟♠️❱${prefix}waktu
-┃✗⃟♠️❱${prefix}botstat
-┃✗⃟♠️❱${prefix}sewabot
-┃✗⃟♠️❱${prefix}listsewa
-┃✗⃟♠️❱${prefix}listpremium
-┃✗⃟♠️❱${prefix}listbanned
-┃✗⃟♠️❱${prefix}owner
-┃✗⃟♠️❱${prefix}ping
-┃✗⃟♠️❱${prefix}runtime
-┃✗⃟♠️❱${prefix}donasi
-┃✗⃟♠️❱${prefix}leaderboard
-┃✗⃟♠️❱${prefix}cekpremium
-┃✗⃟♠️❱${prefix}bugreport 
-┃✗⃟♠️❱${prefix}tag 62xxx
-┃✗⃟♠️❱${prefix}tagme
-┃✗⃟♠️❱${prefix}store
-┃✗⃟♠️❱${prefix}get 
-┃✗⃟♠️❱${prefix}inspect
-┃✗⃟♠️❱${prefix}readmore
-┃✗⃟♠️❱${prefix}nulis 
-┃✗⃟♠️❱${prefix}ultah
-┗━━━━━━━━━━━━━
-
-《 𝙏𝙃??𝙉𝙆𝙎 𝙏𝙊 》
- 
-${bold}❯ IkyAds${bold}
-${bold}❯ Nino Chan${bold}
-${bold}❯ Xinz Bot${bold}
-${bold}❯ Manurius${bold}
-${bold}❯ KunzxD${bold}
-${bold}❯ Arif${bold}
-${bold}❯ Fathur${bold}
-${bold}❯ Adiwajshing/Baileys${bold}`,
+"description": `${allMenuu}`,
 "currencyCode": "IDR",
 "priceAmount1000": "99999999999999999999999999999999",
 "productImageCount": 1
@@ -1832,7 +1351,7 @@ ${bold}❯ Adiwajshing/Baileys${bold}`,
 "isForwarded": true
 }
 } 
-}, {quoted:fstatus, contextInfo:{}}) 
+}, {quoted:kyy, contextInfo:{}}) 
 ikyy.relayWAMessage(res)
 break
 case 'textpro': case 'textpromenu':
@@ -1840,7 +1359,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 if (isBanned) return reply(mess.Ban)
 reply(textproMenu(prefix))
 break
-case 'wibu2': case 'nsfwanime':
+case 'wibu2': case 'nsfwanime': case 'wibu2menu': case 'nsfwmenu':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
 reply(nsfwMenu(prefix))
@@ -1881,6 +1400,8 @@ if (isBanned) return reply(mess.Ban)
 reply(movieMenu(prefix))
 break
 case 'randomtext': case 'randommenu': 
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+if (isBanned) return reply(mess.Ban)
 reply(randomMenu(prefix))
 break
 case 'ownermenu': case 'menuowner':
@@ -1971,7 +1492,7 @@ break
 
 //====================> NYARI KAWAN/PACAR <===================
 
-case 'mutual':
+case 'mutual': case 'next':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
 if (isGroup) return reply(mess.only.pribadi)
@@ -1980,16 +1501,7 @@ await reply('Mencari Pasangan >_<')
 await reply(`wa.me/${anug}`)
 await reply(`Pasangan Ditemukan :\n*${prefix}next* — Temukan Pasangan Baru`)
 break
-case 'next':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (isBanned) return reply(mess.Ban)
-if (isGroup) return reply(mess.only.pribadi)
-anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net', '')
-await reply('Mencari Pasangan >_<')
-await reply(`wa.me/${anug}`)
-await reply(`Pasangan Ditemukan :\n*${prefix}next* — Temukan Pasangan Baru`)
-break
-					
+
 //====================>RANDOM TEXT<===================
 
 case 'wasted':
@@ -6193,7 +5705,7 @@ if (isMedia && !ikyy.message.videoMessage || isQuotedImage) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(ikyy).replace('quotedM','m')).message.extendedTextMessage.contextInfo : ikyy
 bc100 = await ikyy.downloadMediaMessage(encmedia)
 for (let _ of anu100) {
-ikyy.sendMessage(_.jid, bc100, image, {quoted: fstatus, caption: `*𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏*\n\n${body.slice(4)}`})
+ikyy.sendMessage(_.jid, bc100, image, {quoted: fstatus, caption: `*??𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏*\n\n${body.slice(4)}`})
 }
 reply('Suksess broadcast')
 } else {
@@ -6425,7 +5937,20 @@ ikyy.blockUser (`${ny.replace("@s.whatsapp.net","@c.us")}`, "remove")
 reply(`Nomor ${ny.replace("@s.whatsapp.net","@c.us")} telah diunblockir!`)
 }
 break
-									
+case 'sethelp': case 'setcommand':
+if (!isOwner && !kyy.key.fromMe) return 
+if (!q) return reply(`Example :*${prefix + command} simple\n  for simple menu\n •${prefix + command} ori\n  for real menu`)
+if (args[0].toLowerCase() === 'ori'){
+menucommand = false
+reply(`_Succses mengganti menu ke menu ori_`)
+} else if (args[0].toLowerCase() === 'simple'){
+menucommand = true
+reply(`_Succses mengganti menu ke menu simple_`)
+} else {
+  reply(`Pilih 1 atau 0`)
+}
+break
+
 //====================>GRUP<===================
 
 case 'opengc' :
@@ -7619,32 +7144,6 @@ case 'delete':
    reply('Reply chat bot')
 }
    break
-case 'tqtq': //jangan diubah plise
-infonya = 'https://i.ibb.co/4m4jq9C/ea64e685d11d.jpg'
-buff = await getBuffer(infonya)
-teksnya = `
-┌─「 *𝙏𝙃𝘼𝙉𝙆?? 𝙏𝙊* 」
-│
-├ *ALLAH SWT*
-├ *IkyAds (ORI)*
-├ *Nino Chan*
-├ *Xinz Bot*
-├ *Manurius*
-├ *KunzxD*
-├ *Arif*
-├ *Yuzzu Kamiyaka*
-├ *Fathur*
-├ *Devil Bot*
-├ *Adiwajshing/Baileys*
-│
-└──「 *${botName}* 」`
-  buttons = [{buttonId: `.menu`,buttonText:{displayText: `⬡ 𝘽𝘼𝘾𝙆 𝙏𝙊 𝙈𝙀𝙉𝙐 `},type:1}]
-  imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
-  buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText: teksnya,buttons,headerType:4}
-  prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
-  ikyy.relayWAMessage(prep)
-  break
 case 'media':
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isBanned) return reply(mess.Ban)
