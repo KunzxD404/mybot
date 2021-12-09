@@ -486,7 +486,7 @@ sendEphemeral: false,
 "sourceUrl": "",
 },mentionedJid:[sender]}, quoted : fstatus})
 };
-const ftex = = (teks) => {
+const ftex = (teks) => {
 ikyy.sendMessage(from, teks, text,{contextInfo :{text: 'hi',
 "forwardingScore": 1000000000,
 isForwarded: false,
@@ -5705,7 +5705,7 @@ if (isMedia && !ikyy.message.videoMessage || isQuotedImage) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(ikyy).replace('quotedM','m')).message.extendedTextMessage.contextInfo : ikyy
 bc100 = await ikyy.downloadMediaMessage(encmedia)
 for (let _ of anu100) {
-ikyy.sendMessage(_.jid, bc100, image, {quoted: fstatus, caption: `*??𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏*\n\n${body.slice(4)}`})
+ikyy.sendMessage(_.jid, bc100, image, {quoted: fstatus, caption: `*????𝙊𝘼𝘿𝘾𝘼𝙎𝙏*\n\n${body.slice(4)}`})
 }
 reply('Suksess broadcast')
 } else {
