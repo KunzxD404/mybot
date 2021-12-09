@@ -302,6 +302,8 @@ exports.ownerMenu = (prefix) => {
 ┃✗⃟♠️❱${p2}*sewa add/del*
 ┃✗⃟♠️❱${p2}*premium add*
 ┃✗⃟♠️❱${p2}*premium del*
+┃✗⃟♠️❱${p2}*ban*
+┃✗⃟♠️❱${p2}*unban*
 ┃✗⃟♠️❱${p2}*block*
 ┃✗⃟♠️❱${p2}*unblock*
 ┃✗⃟♠️❱${p2}*setname*
@@ -883,6 +885,8 @@ ${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' 
 ┃✗⃟♠️❱${prefix}sewa add/del  
 ┃✗⃟♠️❱${prefix}premium add 
 ┃✗⃟♠️❱${prefix}premium del
+┃✗⃟♠️❱${prefix}ban
+┃✗⃟♠️❱${prefix}unban
 ┃✗⃟♠️❱${prefix}block
 ┃✗⃟♠️❱${prefix}unblock
 ┃✗⃟♠️❱${prefix}setname
