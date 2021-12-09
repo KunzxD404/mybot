@@ -5950,6 +5950,25 @@ reply(`_Succses mengganti menu ke menu simple_`)
   reply(`Pilih 1 atau 0`)
 }
 break
+case 'ban': 
+if (isBanned) return reply(mess.Ban) 
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+if (!isOwner && !mek.key.fromMe) return
+bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
+ban.push(bnnd)
+fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+fakestatus(`Nomor ${bnnd} telah dibanned!`)
+break
+case 'unban': 
+if (isBanned) return reply(mess.Ban) 
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+if (!isOwner && !mek.key.fromMe) return
+ya = `${args[0].replace('@', '')}@s.whatsapp.net`
+unb = ban.indexOf(ya)
+ban.splice(unb, 1)
+fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+fakestatus(`Nomor ${ya} telah di unban!`)
+break
 
 //====================>GRUP<===================
 
@@ -7998,7 +8017,7 @@ return reply(require('util').format(evaluate))
 }
 }
 if (isCmd) {
-textImg(`*Maaf ${pushname} Command* *${cmd}* *tidak terdaftar dalam menu bot*`)
+console.log('404 Command Not Found')
 }
 }
 if (isGroup && budy != undefined) {
