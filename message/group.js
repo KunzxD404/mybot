@@ -44,7 +44,7 @@ ppimg = await iky.getProfilePicture(`${num.split('@')[0]}@c.us`)
 ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 teks = `*Sayonara Onechan* *@${num.split('@')[0]}👋*`
-let buffer = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome?nama=${encodeUrl(namaewa)}&descriminator=${mdata.participants.length}&memcount=${mdata.participants.length}&gcname=${encodeUrl(mdata.subject)}&pp=${ppimg}&bg=https://telegra.ph/file/ec7859cd2bc54b8d6b313.jpg`)
+let buffer = await getBuffer(`http://hadi-api.herokuapp.com/api/card/goodbye?nama=${encodeUrl(namaewa)}&descriminator=${mdata.participants.length}&memcount=${mdata.participants.length}&gcname=${encodeUrl(mdata.subject)}&pp=${ppimg}&bg=https://telegra.ph/file/ec7859cd2bc54b8d6b313.jpg`)
 iky.sendMessage(mdata.id, buffer, MessageType.image, { caption: teks, contextInfo: { "mentionedJid": [num] } })
 }
 } catch (e) {
