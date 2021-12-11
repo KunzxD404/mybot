@@ -598,24 +598,7 @@ exports.storageMenu = (prefix) => {
 ┗━━━━━━━━━━━━━`
 }
 exports.allMenuu = (prefix) => {
-	return `${bold}👑Owner Name : KunzxD${bold}
-${bold}😈Bot Name : Kunz Botz${bold}
-${bold}📍Prefix : 「${prefix}」${bold}
-${bold}🗄Lib : Baileys${bold}
-${bold}♨️Hit today : ${hit_today.length}${bold}
-${bold}🐣Hit All : ${hitall}${bold}
-${bold}🙆‍♂️Total User : ${_registered.length}${bold}
-${bold}🗓Calender : ${date}${bold}
-${bold}⏰Time : ${time}${bold}
-${bold}⏳Runtime :${bold}
-${bold}${runtime(process.uptime())}${bold}
- 
-《𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊》
- 
-${bold}✗⃟♠️❱Name : ${pushname}${bold}
-${bold}✗⃟♠️❱Bio : ${p1 ? `${p1.status}` : '-'}${bold}
-${bold}✗⃟♠️❱Nomor : @${sender.split("@")[0]}${bold}
-${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
+	return `
 
 《 𝙇𝙄𝙎𝙏 𝙈𝙀𝙉𝙐 》
 
@@ -1146,11 +1129,11 @@ ${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' 
 
 《THANKS TO》
  
-${bold}❯ IkyAds${bold}
-${bold}❯ Nino Chan${bold}
-${bold}❯ Xinz Bot${bold}
-${bold}❯ Manurius${bold}
-${bold}❯ Arif${bold}
-${bold}❯ Fathur${bold}
-${bold}❯ Adiwajshing/Baileys${bold}`
+*❯ IkyAds*
+*❯ Nino Chan*
+*❯ Xinz Bot*
+*❯ Manurius*
+*❯ Arif*
+*❯ Fathur*
+*❯ Adiwajshing/Baileys*`
 }
