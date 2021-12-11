@@ -1342,7 +1342,25 @@ res = await ikyy.prepareMessageFromContent(from,{
 "productImage": imeg,
 "productId": "999999999",
 "title": `KunzX😈`,
-"description": `${allMenuu}`,
+"description": `${bold}👑Owner Name : KunzxD${bold}
+${bold}😈Bot Name : Kunz Botz${bold}
+${bold}📍Prefix : 「${prefix}」${bold}
+${bold}🗄Lib : Baileys${bold}
+${bold}♨️Hit today : ${hit_today.length}${bold}
+${bold}🐣Hit All : ${hitall}${bold}
+${bold}🙆‍♂️Total User : ${_registered.length}${bold}
+${bold}🗓Calender : ${date}${bold}
+${bold}⏰Time : ${time}${bold}
+${bold}⏳Runtime :${bold}
+${bold}${runtime(process.uptime())}${bold}
+ 
+《𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊》
+ 
+${bold}✗⃟♠️❱Name : ${pushname}${bold}
+${bold}✗⃟♠️❱Bio : ${p1 ? `${p1.status}` : '-'}${bold}
+${bold}✗⃟♠️❱Nomor : @${sender.split("@")[0]}${bold}
+${bold}✗⃟♠️❱Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
+${allMenuu(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "99999999999999999999999999999999",
 "productImageCount": 1
