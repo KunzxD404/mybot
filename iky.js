@@ -2241,7 +2241,7 @@ if (!isPremium && !isOwner) return reply(mess.only.prem)
 fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
 var bokepp = JSON.parse(JSON.stringify(data))
 var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
-textImg(bokep2.teks)
+reply(bokep2.teks)
 })
 }
 break
@@ -4593,7 +4593,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 case 'cecanvietnam':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/vietnam?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/vietnam?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4601,7 +4601,7 @@ break
 case 'cecanmalaysia':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/malaysia?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/malaysia?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4609,7 +4609,7 @@ break
 case 'cecankorea':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/korea?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/korea?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4617,7 +4617,7 @@ break
 case 'cecanindonesia':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/indonesia?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/indonesia?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4625,7 +4625,7 @@ break
 case 'cecanjapan':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/japan?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/japan?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4633,7 +4633,7 @@ break
 case 'cecanthailand':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-huft = await fetchJson(`https://ikyy-api.herokuapp.com/api/cewe/thailand?apikey=ikyy`)
+huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/thailand?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
 ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
@@ -4643,7 +4643,7 @@ break
 case 'asupan':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.result)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4663,7 +4663,7 @@ break
 case 'asupancecan':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/cecan?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/cecan?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, image, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4671,7 +4671,7 @@ break
 case 'asupanhijaber':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/hijaber?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/hijaber?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, image, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4679,7 +4679,7 @@ break
 case 'asupansantuy':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/santuy?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/santuy?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4687,7 +4687,7 @@ break
 case 'asupanukhti':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/ukty?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/ukty?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4695,7 +4695,7 @@ break
 case 'asupanbocil':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/bocil?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/bocil?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4703,7 +4703,7 @@ break
 case 'asupanghea':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/ghea?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/ghea?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
@@ -4711,7 +4711,7 @@ break
 case 'asupanrika':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-ini = await fetchJson(`https://ikyy-api.herokuapp.com/api/asupan/rikagusriani?apikey=ikyy`)
+ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/rikagusriani?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
 ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
