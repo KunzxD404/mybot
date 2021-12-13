@@ -1292,9 +1292,9 @@ ${bold}Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold
 
 《BOTS GROUP》
 
-${bold}Kunz Botz Official Group 1${bold}
+${bold}Group 1 :${bold}
 ${bold}https://chat.whatsapp.com/GDZOBuMkFSCKw6mzDUDoPd${bold}
-${bold}Kunz Botz Official Group 2${bold}
+${bold}Group 2 :${bold}
 ${bold}https://chat.whatsapp.com/G64dsAUKQFx4QO8n9dBybj${bold}
 
 《LIST MENU》
