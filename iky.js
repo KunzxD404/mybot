@@ -439,7 +439,7 @@ const isRegistered = checkRegisteredUser(sender)
 
 const fkontak = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { "contactMessage": { "displayName": `${pushname}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${senderr.split('@')[0]}:${senderr.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail":fs.readFileSync('thumbnail.jpg')}}}
 const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} }
-const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Follow My YT KunzxD", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
+const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Subscribe My YT KunzxD", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
 const reply = (teks) => { ikyy.sendMessage(from, teks, text, {quoted:kyy, thumbnail: fakeimage})}
 const katalog = (teks) => {
 res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 111119999, "message": teks, "footerText": "KunzX😈", "thumbnail": fs.readFileSync('thumbnail.jpg'), "surface": 'CATALOG' }}, {quoted:fstatus})
@@ -455,7 +455,7 @@ message: {
 "imageMessage": {
 "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
 "mimetype": "image/jpeg",
-"caption": "Follow My YT KunzxD",
+"caption": "Subscribe My YT KunzxD",
 "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
 "fileLength": "28777",
 "height": 1080,
