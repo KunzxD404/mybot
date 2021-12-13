@@ -439,7 +439,7 @@ const isRegistered = checkRegisteredUser(sender)
 
 const fkontak = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { "contactMessage": { "displayName": `${pushname}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${senderr.split('@')[0]}:${senderr.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail":fs.readFileSync('thumbnail.jpg')}}}
 const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} }
-const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Follow My Ig @iam.kunzx", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
+const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Follow My YT KunzxD", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
 const reply = (teks) => { ikyy.sendMessage(from, teks, text, {quoted:kyy, thumbnail: fakeimage})}
 const katalog = (teks) => {
 res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 111119999, "message": teks, "footerText": "KunzX😈", "thumbnail": fs.readFileSync('thumbnail.jpg'), "surface": 'CATALOG' }}, {quoted:fstatus})
@@ -455,7 +455,7 @@ message: {
 "imageMessage": {
 "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
 "mimetype": "image/jpeg",
-"caption": "Follow My Ig @iam.kunzx",
+"caption": "Follow My YT KunzxD",
 "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
 "fileLength": "28777",
 "height": 1080,
@@ -477,7 +477,7 @@ ikyy.sendMessage(from, teks, text,{contextInfo :{text: 'hi',
 isForwarded: false,
 sendEphemeral: false,
 "externalAdReply": {
-"title": `hallo ${pushname}🗿` ,
+"title": `hallo ${pushname}😈` ,
 "body": `Subs YT KunzxD Ya🗿`,
 "mediaType": "2",
 "thumbnailUrl": "https://c.top4top.io/p_2087f30hj1.jpeg",
@@ -1220,68 +1220,6 @@ case 'help':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if(menucommand == false){
-timestampe = speed();
-latensie = speed() - timestampe
-reply(`${ucapanWaktu} ${pushname}${bold}
-
-《${bold}BOT INFO${bold}》
-
-${bold}Creator : KunzxD${bold}
-${bold}Nama Bot : Kunz Botz${bold}
-${bold}Prefix${bold} : ${prefix}
-${bold}Lib : Baileys${bold}
-${bold}Tanggal${bold} : ${bold}${date}${bold}
-${bold}Jam${bold} : ${bold}${time}${bold}
-${bold}Hit today : ${hit_today.length}${bold}
-${bold}Hit all : ${hitall}${bold}
-${bold}Pengguna : ${_registered.length}${bold}
-
-《USER INFO》
-
-${bold}Name : ${pushname}${bold}
-${bold}Bio${bold} : ${p1 ? `${p1.status}` : '-'}${bold}
-${bold}Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
-
-《LIST MENU》
-
-✗⃟♠️❱${prefix}${bold}groupmenu${bold}
-✗⃟♠️❱${prefix}${bold}ownermenu${bold}
-✗⃟♠️❱${prefix}${bold}stickermenu${bold}
-✗⃟♠️❱${prefix}${bold}textpromenu${bold}
-✗⃟♠️❱${prefix}${bold}infomenu${bold}
-✗⃟♠️❱${prefix}${bold}mutualmenu${bold}
-✗⃟♠️❱${prefix}${bold}sessionmenu${bold}
-✗⃟♠️❱${prefix}${bold}randommenu${bold}
-✗⃟♠️❱${prefix}${bold}randomimagemenu${bold}
-✗⃟♠️❱${prefix}${bold}randomtextmenu${bold}
-✗⃟♠️❱${prefix}${bold}wibumenu${bold}
-✗⃟♠️❱${prefix}${bold}nsfwmenu${bold}
-✗⃟♠️❱${prefix}${bold}photoxymenu${bold}
-✗⃟♠️❱${prefix}${bold}ephotomenu${bold}
-✗⃟♠️❱${prefix}${bold}imagemenu${bold}
-✗⃟♠️❱${prefix}${bold}downloadmenu${bold}
-✗⃟♠️❱${prefix}${bold}searchmenu${bold}
-✗⃟♠️❱${prefix}${bold}moviemenu${bold}
-✗⃟♠️❱${prefix}${bold}urlmenu${bold}
-✗⃟♠️❱${prefix}${bold}gamemenu${bold}
-✗⃟♠️❱${prefix}${bold}kerangmenu${bold}
-✗⃟♠️❱${prefix}${bold}asupanmenu${bold}
-✗⃟♠️❱${prefix}${bold}cecanmenu${bold}
-✗⃟♠️❱${prefix}${bold}islammenu${bold}
-✗⃟♠️❱${prefix}${bold}pornmenu${bold}
-✗⃟♠️❱${prefix}${bold}warmenu${bold}
-✗⃟♠️❱${prefix}${bold}othermenu${bold}
-
-《THANKS TO》
-
-${bold}❯ IkyAds${bold}
-${bold}❯ Nino Chan${bold}
-${bold}❯ Xinz Bot${bold}
-${bold}❯ Manurius${bold}
-${bold}❯ Arif${bold}
-${bold}❯ Fathur${bold}
-${bold}❯ Adiwajshing/Baileys${bold}`)
-} else if(menucommand = true){ 
 menu =` ${ucapanWaktu} @${sender.split("@")[0]}😉
 
 ━[ *KUNZ BOTZ* ]━
@@ -1328,7 +1266,77 @@ rowId: `${prefix}${x}`
 list.push(yy)
    }
 listmsg(from, `Please select the bot menu here\n\n🌉Day ${week} ${weton} \n🌉Date : ${date}`, `  `, list)
-  }, 5)}
+  }, 5)
+} else if(menucommand = true){ 
+timestampe = speed();
+latensie = speed() - timestampe
+reply(`${bold}${ucapanWaktu} ${pushname}${bold}
+
+《BOT INFO》
+
+${bold}Creator : KunzxD${bold}
+${bold}Nama Bot : Kunz Botz${bold}
+${bold}Prefix${bold} : ${prefix}
+${bold}Lib : Baileys${bold}
+${bold}Tanggal${bold} : ${bold}${date}${bold}
+${bold}Jam${bold} : ${bold}${time}${bold}
+${bold}Hit today : ${hit_today.length}${bold}
+${bold}Hit all : ${hitall}${bold}
+${bold}Pengguna : ${_registered.length}${bold}
+
+《USER INFO》
+
+${bold}Name : ${pushname}${bold}
+${bold}Bio${bold} : ${bold}${p1 ? `${p1.status}` : '-'}${bold}
+${bold}Status : ${isOwner ? 'Owner' : isPremium ? 'Premium User' : 'User'}${bold}
+
+《BOTS GROUP》
+
+${bold}Kunz Botz Official Group 1${bold}
+${bold}https://chat.whatsapp.com/GDZOBuMkFSCKw6mzDUDoPd${bold}
+${bold}Kunz Botz Official Group 2${bold}
+${bold}https://chat.whatsapp.com/G64dsAUKQFx4QO8n9dBybj${bold}
+
+《LIST MENU》
+
+✗⃟♠️❱${prefix}${bold}groupmenu${bold}
+✗⃟♠️❱${prefix}${bold}ownermenu${bold}
+✗⃟♠️❱${prefix}${bold}stickermenu${bold}
+✗⃟♠️❱${prefix}${bold}textpromenu${bold}
+✗⃟♠️❱${prefix}${bold}infomenu${bold}
+✗⃟♠️❱${prefix}${bold}mutualmenu${bold}
+✗⃟♠️❱${prefix}${bold}sessionmenu${bold}
+✗⃟♠️❱${prefix}${bold}randommenu${bold}
+✗⃟♠️❱${prefix}${bold}randomimagemenu${bold}
+✗⃟♠️❱${prefix}${bold}randomtextmenu${bold}
+✗⃟♠️❱${prefix}${bold}wibumenu${bold}
+✗⃟♠️❱${prefix}${bold}nsfwmenu${bold}
+✗⃟♠️❱${prefix}${bold}photoxymenu${bold}
+✗⃟♠️❱${prefix}${bold}ephotomenu${bold}
+✗⃟♠️❱${prefix}${bold}imagemenu${bold}
+✗⃟♠️❱${prefix}${bold}downloadmenu${bold}
+✗⃟♠️❱${prefix}${bold}searchmenu${bold}
+✗⃟♠️❱${prefix}${bold}moviemenu${bold}
+✗⃟♠️❱${prefix}${bold}urlmenu${bold}
+✗⃟♠️❱${prefix}${bold}gamemenu${bold}
+✗⃟♠️❱${prefix}${bold}kerangmenu${bold}
+✗⃟♠️❱${prefix}${bold}asupanmenu${bold}
+✗⃟♠️❱${prefix}${bold}cecanmenu${bold}
+✗⃟♠️❱${prefix}${bold}islammenu${bold}
+✗⃟♠️❱${prefix}${bold}pornmenu${bold}
+✗⃟♠️❱${prefix}${bold}warmenu${bold}
+✗⃟♠️❱${prefix}${bold}othermenu${bold}
+
+《THANKS TO》
+
+${bold}❯ IkyAds${bold}
+${bold}❯ Nino Chan${bold}
+${bold}❯ Xinz Bot${bold}
+${bold}❯ Manurius${bold}
+${bold}❯ Arif${bold}
+${bold}❯ Fathur${bold}
+${bold}❯ Adiwajshing/Baileys${bold}`)
+}
 break
 case 'allmenu':
 if (isBanned) return reply(mess.Ban)
@@ -1371,7 +1379,7 @@ ${allMenuu(prefix)}`,
 "isForwarded": true
 }
 } 
-}, {quoted:kyy, contextInfo:{}}) 
+}, {quoted:fstatus, contextInfo:{}}) 
 ikyy.relayWAMessage(res)
 break
 case 'textpro': case 'textpromenu':
@@ -1542,10 +1550,10 @@ case 'tahta':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/harta-tahta?text=${q}&apikey=${lolkey}`)
-  buttons = [{buttonId: `!infoig`,buttonText:{displayText: ` Jangan Lupa Follow @iam_kunzx`},type:1}]
+  buttons = [{buttonId: `!infoig`,buttonText:{displayText: `${fake}`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1556,10 +1564,10 @@ buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/quote-maker?tex
 ikyy.sendMessage(from, buff, image, {thumbnail: Buffer.alloc(0), quoted: fstatus})
 case 'darkjoke': 
 buff = await getBuffer(`http://lolhuman.herokuapp.com/api/meme/darkjoke?apikey=${lolkey}`, {method: 'get'})
-buttons = [{buttonId: `!infoig`,buttonText:{displayText: ` Jangan Lupa Follow @iam_kunzx`},type:1}]
+buttons = [{buttonId: `!infoig`,buttonText:{displayText: `${fake}`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1752,7 +1760,7 @@ reply (mess.wait)
   buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️NEXT➡️`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
   break
@@ -1809,7 +1817,7 @@ reply (mess.wait)
 buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️NEXT➡️`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1855,7 +1863,7 @@ ini_txt = args.join(" ")
  buttons = [{buttonId: `!menu`,buttonText:{displayText: `BACK MENU`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1879,7 +1887,7 @@ txt2 = args[1]
   buttons = [{buttonId: `!menu`,buttonText:{displayText: `BACK MENU`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1917,7 +1925,7 @@ ini_txt = args.join(" ")
   buttons = [{buttonId: `!menu`,buttonText:{displayText: `BACK MENU`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1935,7 +1943,7 @@ buff = await getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey
   buttons = [{buttonId: `!menu`,buttonText:{displayText: `BACK MENU`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1980,7 +1988,7 @@ ini_txt = args.join(" ")
    buttons = [{buttonId: `!menu`,buttonText:{displayText: `BACK MENU`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
-  contentText:`Jangan Lupa Follow @iam_kunzx`,buttons,headerType:4}
+  contentText:`${fake}`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
 break
@@ -1990,14 +1998,14 @@ if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 anu = await fetchJson(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=${lolkey}`)
 buff1 = await getBuffer(anu.result.male)
-buttons = [{buttonId: `!infoig`,buttonText:{displayText: `Jangan Lupa Follow @iam_kunzx`},type:1}]
+buttons = [{buttonId: `!infoig`,buttonText:{displayText: `${fake}`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff1, "imageMessage", { thumbnail: buff1, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
   contentText:`Cowo`,buttons,headerType:4}
   prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fstatus})
   ikyy.relayWAMessage(prep)
   buff2 = await getBuffer(anu.result.female)
-  buttons = [{buttonId: `!infoig`,buttonText:{displayText: `Jangan Lupa Follow @iam_kunzx`},type:1}]
+  buttons = [{buttonId: `!infoig`,buttonText:{displayText: `${fake}`},type:1}]
   imageMsg = (await ikyy.prepareMessageMedia(buff2, "imageMessage", { thumbnail: buff2, })).imageMessage
   buttonsMessage = {footerText:`${faketeks}`, imageMessage: imageMsg,
   contentText:`Cewe`,buttons,headerType:4}
