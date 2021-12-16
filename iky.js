@@ -5757,7 +5757,7 @@ reply('Sukses broadcast group')
 }
 break
 case 'clearall':{
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 let chiit = await ikyy.chats.all()
 for (let i of chiit){
 ikyy.modifyChat(i.jid, 'clear', {
@@ -5768,8 +5768,7 @@ reply(`Succes Delete All Chat🙂`)
 }
 break
 case 'term':
-
-if (!isOwner) return
+if (!isOwner && !kyy.key.fromMe) return
 if (!q) return
 exec(q, (err, stdout) => {
 if (err) return reply(`${err}`)
@@ -5779,22 +5778,20 @@ reply(stdout)
 })
 break 
 case 'shutdown':
-
-if (!isOwner) return 
+if (!isOwner && !kyy.key.fromMe) return
 reply(`Bye...`)
 await sleep(3000)
 process.exit()
 break
 case 'restart':
-
-if (!isOwner) return 
+if (!isOwner && !kyy.key.fromMe) return
 reply(mess.wait)
 exec(`clear && npm start`)
 reply('_Restarting Bot Success_')
 break
 case 'leaveall':
-
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)let totalgroup = ikyy.chats.array.filter(u => u.jid.endsWith('@g.us')).map(u => u.jid)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+let totalgroup = ikyy.chats.array.filter(u => u.jid.endsWith('@g.us')).map(u => u.jid)
 for (let id of totalgroup) {
 sendMess(id, 'Byee', null)
 await sleep(3000)
@@ -5802,7 +5799,6 @@ ikyy.groupLeave(id)
 }
 break
 case 'public':
-
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (banChats === true) return 
 banChats = true
@@ -5810,17 +5806,16 @@ fakestatus(`Sukses mode publik gan`)
 break
 case "set":
 case "mode":
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)sendButMessage(from, `SELF OR PUBLIC`, `Silahkan pilih salah satu`, [{
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+sendButMessage(from, `SELF OR PUBLIC`, `Silahkan pilih salah satu`, [{
 buttonId: `${prefix}self`,buttonText: {displayText: `⬡ SELF `,},type: 1,},{buttonId: `${prefix}public`,buttonText: {displayText: `⬡ PUBLIC`,},type: 1,},]);
 break;
 case 'self':
-
-  if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)  if (banChats === false) return
-  uptime = process.uptime()
-  banChats = false
-  fakestatus(`Success mode self gan`)
-  break
-  break
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+if (banChats === false) return
+banChats = false
+fakestatus(`Success mode self gan`)
+break
 case 'tobc':
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 ikyy.updatePresence(from, Presence.composing)
@@ -5935,7 +5930,8 @@ reply(`_Succses mengganti menu ke menu simple_`)
 }
 break
 case 'ban': 
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
 ban.push(bnnd)
 fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
 fakestatus(`Nomor ${bnnd} telah dibanned!`)
