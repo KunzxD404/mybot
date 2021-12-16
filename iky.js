@@ -5677,7 +5677,8 @@ fs.writeFileSync('./database/bot/update.json', JSON.stringify(_update))
 reply(`Update fitur berhasil ditambahkan ke database!`)
 break
 case 'reset':
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)var reset = []
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+var reset = []
 glimit = reset
 _update = reset
 console.log('Hang tight, it\'s time to reset')
