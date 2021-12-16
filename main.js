@@ -16,7 +16,7 @@ nocache('../message/group.js', module => console.log(color('[WATCH]', 'cyan'), c
 
 const starts = async (iky = new WAConnection()) => {
 iky.logger.level = 'warn'
-iky.version = [2, 4143, 4]
+iky.version = [2, 2140, 14]
 console.log(color(figlet.textSync('KunzxD~', {
 font: 'Standard',
 horizontalLayout: 'default',
