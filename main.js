@@ -24,7 +24,7 @@ vertivalLayout: 'default',
 width: 80,
 whitespaceBreak: false
 }), 'cyan'))
-iky.browserDescription = ["Kunz", "Firefox", "3.0.0"];
+iky.browserDescription = ["Kunz", "Browser", "3.0.0"];
 iky.on('qr', () => {
 console.log(color('[', 'white'), color('!', 'red'), color(']', 'white'), color('Scan Qr Nya'))
 })
