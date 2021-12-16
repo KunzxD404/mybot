@@ -1112,7 +1112,7 @@ prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{})
 ikyy.relayWAMessage(prep)
 break      
 case 'spamcall':{
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 if (args.length > 2) return reply(`Cara penggunaan : ${command} no hp`)
 if (isNaN(args[1]) && args[1].startsWith('62')) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
 fetchJson(`https://api.zeks.xyz/api/spamcall?apikey=${zekskey}&no=${args[1]}`)
@@ -2135,117 +2135,117 @@ break
 
 case 'bokep1':				 
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/h2nygxbyb6n9cyo/VID-20210107-WA1468.mp4/file' })
 break
 case 'bokep2':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/pk8hozohzdc076c/VID-20210107-WA1466.mp4/file' })
 break
 case 'bokep3':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/112q3u286tnvzjo/VID-20210107-WA1467.3gp/file' })				    
 break
 case 'bokep4':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/arpphhxsv94ak0r/VID-20210107-WA1462.mp4/file' })				   
 break
 case 'bokep5':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/us3f4j62emftbrf/VID-20210107-WA1463.mp4/file' })				   
 break
 case 'bokep6':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/v4033tkl16hgf2b/VID-20210107-WA1459.mp4/file' })				   
 break
 case 'bokep7':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/3scnim6d1x4b8ie/VID-20210107-WA1461.mp4/file' })				   
 break
 case 'bokep8':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/dx9tklonu0eq36w/VID-20210107-WA1464.mp4/file' })				   
 break
 case 'bokep9':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/snwja297dv4zvtl/VID-20210107-WA0036.mp4/file' })				   
 break
 case 'bokep10':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/60dqek0mqhyt6rn/VID-20210107-WA1530.mp4/file' })				   
 break
 case 'bokep12':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ni2mcdknb6zn50t/VID-20210107-WA1532.mp4/file' })				   
 break
 case 'bokep13':	
 qute = fs.readFileSync('thumbnail.jpg')
-  if (!isPremium && !isOwner) return reply(mess.only.prem)
+  if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/i9t96lrmd9lm71z/VID-20210107-WA1542.mp4/file' })				   
 break
 case 'bokep14':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/tjqdfmp8g08dt4e/VID-20210107-WA1536.mp4/file' })				   
 break
 case 'bokep15':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/x034q0s16u9vyhy/VID-20210107-WA1537.mp4/file' })				   
 break
 case 'bokep16':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/mgmynqghjnon2q7/VID-20210107-WA1533.mp4/file' })				   
 break
 case 'bokep17':	
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ecly00at6adxs20/VID-20210107-WA1540.mp4/file' })				   
 break
 case 'bokep18':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/7qkn8nuog22jsco/VID-20210107-WA1534.mp4/file' })				   
 break
 case 'bokep19':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/vza5uaben93dfdr/VID-20210107-WA1527.mp4/file' })				   
 break
 case 'bokep20':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/l7uzd4v9p95wpeb/VID-20210107-WA1541.mp4/file' })				   
 break
 case 'bokep': case 'bkp': case 'randombokep':{
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
 var bokepp = JSON.parse(JSON.stringify(data))
 var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
@@ -3504,7 +3504,7 @@ reply(`*Merespon dalam ${latensie.toFixed(4)} Sec 💬*`)
 break
 case 'premiumcheck':
 case 'cekpremium': 
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 const cekExp = ms(await premium.getPremiumExpired(sender, _premium) - Date.now())
@@ -3512,7 +3512,7 @@ reply(`*「 PREMIUM EXPIRE 」*\n\n➸ *ID*: ${sender}\n➸ *Premium left*: ${ce
 break
 case 'listprem':
 case 'listpremium':          
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 let txt = `「 *PREMIUM USER LIST* 」\n\n`
@@ -3533,7 +3533,7 @@ break
 case 'inspect':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 try {
 let linkRegex = /chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
 let [, code] = q.match(linkRegex) || []
@@ -3764,7 +3764,7 @@ break
 case 'ythd':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 if (args.length === 0) return reply(`Kirim perintah */ytmp4 _linkYt_*`)
 let isLinkks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 if (!isLinkks2) return reply(mess.error.Iv)
@@ -4006,7 +4006,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 case 'nhentaipdf':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
- if (!isPremium && !isOwner) return reply(mess.only.prem)
+ if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
  if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
  if (isNaN(Number(args[0]))) return await reply(mess.wrongFormat)
  try {
@@ -4033,7 +4033,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 case 'nhentai':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-  if (!isPremium && !isOwner) return reply(mess.only.prem)
+  if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
   if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
   reply(mess.wait)
   henid = args[0]
@@ -4295,7 +4295,7 @@ case '3dnekopoi':
 case '3dnekopoilast':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-   if (!isPremium && !isOwner) return reply(mess.only.prem)
+   if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
   reply(mess.wait)
   try {
   bsangee = await axios.get(`https://api.vhtear.com/neko3d&apikey=${vhtearkey}`)
@@ -4314,7 +4314,7 @@ case 'nekopoijav':
 case 'javnekopoi':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
    reply(mess.wait)
    try {
    bsangce = await axios.get(`https://api.vhtear.com/nekojavlist&apikey=${vhtearkey}`)
@@ -4332,7 +4332,7 @@ case 'nekopoicosplay':
 case 'cosplaynekopoi':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
    try {
    reply(mess.wait)
    bsangbe = await axios.get(`https://api.vhtear.com/nekojavcosplay&apikey=${vhtearkey}`)
@@ -5653,9 +5653,9 @@ sendButMessage(from, tes1, tes2, tes3, { quoted: fstatus})
 break
 
 //====================>OWNER<===================
+
 case 'addrespon':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length > 1) return reply(`Penggunaan ${prefix}addrespon hai|hai juga`)
 argz = arg.split('|')
 if (checkCommands(argz[0], commandsDB) === true) return reply(`Udah ada`)
@@ -5663,25 +5663,21 @@ addCommands(argz[0], argz[1], sender, commandsDB)
 reply(`Sukses menambahkan respon ${argz[0]}`)
 break
 case 'delrespon':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply(`Penggunaan ${prefix}delrespon hai`)
 if (!checkCommands(body.slice(11), commandsDB)) return reply(`Ga ada di database`)
 deleteCommands(body.slice(11), commandsDB)
 reply(`Sukses menghapus respon ${body.slice(11)}`)
 break      
 case 'addupdate':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner) return reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (!q) return reply(`Example: ${command} update fitur`)
 _update.push(q)
 fs.writeFileSync('./database/bot/update.json', JSON.stringify(_update))
 reply(`Update fitur berhasil ditambahkan ke database!`)
 break
 case 'reset':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner) return reply(mess.only.owner)
-var reset = []
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)var reset = []
 glimit = reset
 _update = reset
 console.log('Hang tight, it\'s time to reset')
@@ -5690,7 +5686,7 @@ textImg('Oke Desu ~')
 break	
 case 'join': 
 if (!q) return reply('Linknya?')
-if (!isOwner) return reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply('Linknya Invalid Tod')
 link = args[0].replace('https://chat.whatsapp.com/','')
 fak = ikyy.query({ json: ['action', 'invite', link],
@@ -5698,9 +5694,8 @@ expect200: true })
 reply('Berhasil Masuk Grup')
 break
 case 'eval':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 try {
-if (!isOwner) return
+if (!isOwner && !kyy.key.fromMe) return
 sy = args.join(' ')
  return eval(sy)
 } catch(e) {
@@ -5709,14 +5704,12 @@ reply(`${e}`)
 break
 case 'getquoted':
 case 'q':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 reply(JSON.stringify(kyy.message.extendedTextMessage.contextInfo, null, 3))
 break
 case 'bc':
 case 'broadcast':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply('teks?')
 anu100 = await ikyy.chats.all()
 if (isMedia && !ikyy.message.videoMessage || isQuotedImage) {
@@ -5744,8 +5737,7 @@ reply('Suksess broadcast')
 }
 break
 case 'bcgc':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply('.......')
 anu = await groupMembers 
 tagss = ikyy.participant
@@ -5764,7 +5756,7 @@ reply('Sukses broadcast group')
 }
 break
 case 'clearall':{
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)  reply(mess.only.owner)
 let chiit = await ikyy.chats.all()
 for (let i of chiit){
 ikyy.modifyChat(i.jid, 'clear', {
@@ -5775,7 +5767,7 @@ reply(`Succes Delete All Chat🙂`)
 }
 break
 case 'term':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+
 if (!isOwner) return
 if (!q) return
 exec(q, (err, stdout) => {
@@ -5786,23 +5778,22 @@ reply(stdout)
 })
 break 
 case 'shutdown':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+
 if (!isOwner) return 
 reply(`Bye...`)
 await sleep(3000)
 process.exit()
 break
 case 'restart':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+
 if (!isOwner) return 
 reply(mess.wait)
 exec(`clear && npm start`)
 reply('_Restarting Bot Success_')
 break
 case 'leaveall':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner) return reply(mess.only.owner)
-let totalgroup = ikyy.chats.array.filter(u => u.jid.endsWith('@g.us')).map(u => u.jid)
+
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)let totalgroup = ikyy.chats.array.filter(u => u.jid.endsWith('@g.us')).map(u => u.jid)
 for (let id of totalgroup) {
 sendMess(id, 'Byee', null)
 await sleep(3000)
@@ -5810,30 +5801,27 @@ ikyy.groupLeave(id)
 }
 break
 case 'public':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return
+
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (banChats === true) return 
 banChats = true
 fakestatus(`Sukses mode publik gan`)
 break
 case "set":
 case "mode":
-if (!isOwner && !kyy.key.fromMe) return
-sendButMessage(from, `SELF OR PUBLIC`, `Silahkan pilih salah satu`, [{
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)sendButMessage(from, `SELF OR PUBLIC`, `Silahkan pilih salah satu`, [{
 buttonId: `${prefix}self`,buttonText: {displayText: `⬡ SELF `,},type: 1,},{buttonId: `${prefix}public`,buttonText: {displayText: `⬡ PUBLIC`,},type: 1,},]);
 break;
 case 'self':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-  if (!isOwner && !kyy.key.fromMe) return
-  if (banChats === false) return
+
+  if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)  if (banChats === false) return
   uptime = process.uptime()
   banChats = false
   fakestatus(`Success mode self gan`)
   break
   break
 case 'tobc':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 ikyy.updatePresence(from, Presence.composing)
 anu = await ikyy.chats.all()
 if (isMedia && !kyy.message.videoMessage || isQuotedAudio) {
@@ -5853,16 +5841,14 @@ ikyy.sendMessage(_.jid, buff, sticker, { quoted: fstatus, contextInfo: { forward
 }
 break
 case 'setname':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply('Teksnya?')
 anu = body.slice(9)
 ikyy.updateProfileName(anu)
 reply(`Sukses mengganti nama ke ${body.slice(9)}`)
 break
 case 'setpp':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 ikyy.updatePresence(from, Presence.composing)
 if (!isQuotedImage) return reply('Reply imagenya!')
 encmedia = JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -5871,15 +5857,14 @@ await ikyy.updateProfilePicture(botNumber, mediau)
 reply('Sukses')
 break
 case 'setbio':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply('Teksnya?')
 iyek = body.slice(8)
 ikyy.setStatus(`${iyek}`)
 reply(`Sukses mengganti bio ke ${body.slice(8)}`)
 break 
 case 'spam':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (!arg) return reply(`Penggunaan ${prefix}spam teks|jumlah`)
 argsi = arg.split("|")
@@ -5891,8 +5876,7 @@ ikyy.sendMessage(from, argsi[0], MessageType.text)
 } 
 break
 case 'chat':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !kyy.key.fromMe) return  reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (args.length < 1) return reply(`Penggunaan ${prefix}chat 62xnxx|teks`)
 if (args[0].startsWith('08')) return reply('Awali nomor dengan 62')
 if (args[0].startsWith('+62')) return reply('Awali nomor dengan 62')
@@ -5903,8 +5887,7 @@ ikyy.sendMessage(nomor+'@s.whatsapp.net', org, MessageType.text)
 reply(`Sukses mengirim chat:\n${org},@${nomor}`)
 break
 case 'setthumb':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner) return reply(mess.only.owner)
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (!isQuotedImage) return reply('Reply imagenya blokk!')
 const messimagethumb = JSON.parse(JSON.stringify(kyy).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 const downiamgethumb = await ikyy.downloadMediaMessage(messimagethumb)
@@ -5914,7 +5897,6 @@ fs.writeFileSync(`thumbnail.jpg`, downiamgethumb)
 reply('Succes')
 break
 case 'block':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (kyy.message.extendedTextMessage === undefined || kyy.message.extendedTextMessage === null) {
 ny = `${args[0].replace('@', '')}@c.us`
@@ -5927,7 +5909,6 @@ reply(`Nomor ${ny.replace("@s.whatsapp.net","@c.us")} telah blockir!`)
 }
 break
 case 'unblock':
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (kyy.message.extendedTextMessage === undefined || kyy.message.extendedTextMessage === null) {
 ny = `${args[0].replace('@', '')}@c.us`
@@ -5940,7 +5921,7 @@ reply(`Nomor ${ny.replace("@s.whatsapp.net","@c.us")} telah diunblockir!`)
 }
 break
 case 'sethelp': case 'setcommand':
-if (!isOwner && !kyy.key.fromMe) return 
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 if (!q) return reply(`Example :*${prefix + command} simple\n  for simple menu\n •${prefix + command} ori\n  for real menu`)
 if (args[0].toLowerCase() === 'ori'){
 menucommand = false
@@ -5953,16 +5934,13 @@ reply(`_Succses mengganti menu ke menu simple_`)
 }
 break
 case 'ban': 
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !mek.key.fromMe) return
-bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
 ban.push(bnnd)
 fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
 fakestatus(`Nomor ${bnnd} telah dibanned!`)
 break
 case 'unban': 
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isOwner && !mek.key.fromMe) return
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 ya = `${args[0].replace('@', '')}@s.whatsapp.net`
 unb = ban.indexOf(ya)
 ban.splice(unb, 1)
@@ -6480,7 +6458,7 @@ case 'hidetag20':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if(!isGroup) return reply(mess.only.group)
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 var value = body.slice(11)
 var group = await ikyy.groupMetadata(from)
 var member = group['participants']
@@ -7156,11 +7134,13 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 case 'd':
 case 'del':
 case 'delete': 
-   try {
-   if (kyy.message.extendedTextMessage === undefined || kyy.message.extendedTextMessage === null) return reply('Reply chat bot')
-   ikyy.deleteMessage(from, {id: kyy.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true})
+try {
+if (isBanned) return reply(mess.Ban)
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
+if (kyy.message.extendedTextMessage === undefined || kyy.message.extendedTextMessage === null) return reply('Reply chat bot')
+ikyy.deleteMessage(from, {id: kyy.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true})
    } catch (e){
-   reply('Reply chat bot')
+reply('Reply chat bot')
 }
    break
 case 'media':
@@ -7415,7 +7395,7 @@ case 'jadibot':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isGroup) return reply(mess.only.pribadi)
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 ikyy.version = [2, 4143, 4]
 ikyy.browserDescription = ['KunzxD','Firefox','3.0']
 if (args[0] && args[0].length > 200) {
@@ -7454,7 +7434,7 @@ case 'stopjadibot':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 if (isGroup) return reply(mess.only.pribadi)
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 try {
 reply('Oke')
 fs.unlinkSync(`./src/${sender}.json`)
@@ -7730,7 +7710,7 @@ case 'jadivirgam':
 case 'tobug':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 if (!isQuotedSticker) return reply(' reply sticker Yang mau dijadikan Virgam')
 reply(mess.wait)
 const virgamnye = JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -7748,7 +7728,7 @@ case 'tovirvid' :
 case 'jadivirvid':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
-if (!isPremium && !isOwner) return reply(mess.only.prem)
+if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
 reply(mess.wait) 
 if ((isMedia && !kyy.message.videoMessage || isQuotedVideo) && args.length == 0) {
 encmediau = isQuotedVideo ? JSON.parse(JSON.stringify(kyy).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : kyy
