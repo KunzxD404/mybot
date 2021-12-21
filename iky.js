@@ -6304,8 +6304,11 @@ case 'afk':
   const aluty = `Fitur AFK berhasil *diaktifkan!*\n\n➸ *Ussername*: ${pushname}\n➸ *Alasan*: ${reason}`
   reply(aluty)
   break
+case 'idgroup': case 'getidgc': case 'idgc':
+reply(`${from}`)
+break
 case 'infogrup':
-case 'infogrouup':
+case 'infogroup':
 case 'grupinfo':
 case 'groupinfo':
 if (isBanned) return reply(mess.Ban)
@@ -7759,7 +7762,7 @@ reply(`*Prefix Saat Ini* = ${prefix}`)}
 if (budy.includes(`bot`)) {
 reply(`Ya, Emang Gue BOT🗿\nApa? Gak Seneng?\nBewan Pantek😡`)}
 if (budy.includes(`Bot`)) {
-reply(`Ya, Emang Gue BOT🗿\nApa? Gak Seneng?\nBewan Pantek😡`)}
+reply(`Ya, Emang Gue BOT🗿\nApa? Gak Seneng?\nBewan Pantek??`)}
 if (budy.includes(`Cekprefix`)) {
 reply(`Prefix Saat Ini = ${prefix}`)}
 if (budy.includes(`assalamu`)) {
