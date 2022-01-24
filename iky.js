@@ -349,13 +349,13 @@ const sendMess = (hehe, teks) => {
 ikyy.sendMessage(hehe, teks, text)
 }
 const mentions = (teks, memberr, id) => {
-(id == null || id == undefined || id == false) ? ikyy.sendMessage(from, {text: teks.trim(), jpegThumbnail: fs.readFileSync('thumbnail.jpg')}, extendedText, { sendEphemeral: true, contextInfo: { "mentionedJid": memberr } }) : ikyy.sendMessage(from, {text: teks.trim(), jpegThumbnail: fs.readFileSync('thumbnail.jpg')}, extendedText, { sendEphemeral: true, quoted: fkontak, contextInfo: { "mentionedJid": memberr } })
+(id == null || id == undefined || id == false) ? ikyy.sendMessage(from, {text: teks.trim(), jpegThumbnail: fs.readFileSync('thumbnail.jpg')}, extendedText, { sendEphemeral: true, contextInfo: { "mentionedJid": memberr } }) : ikyy.sendMessage(from, {text: teks.trim(), jpegThumbnail: fs.readFileSync('thumbnail.jpg')}, extendedText, { sendEphemeral: true, quoted: kyy, contextInfo: { "mentionedJid": memberr } })
 }
 const sendText = (from, text) => {
 ikyy.sendMessage(from, text, MessageType.text)
 }
 const textImg = (teks) => {
-return ikyy.sendMessage(from, teks, text, {quoted: fkontak, thumbnail: fs.readFileSync('thumbnail.jpg')})
+return ikyy.sendMessage(from, teks, text, {quoted: kyy, thumbnail: fs.readFileSync('thumbnail.jpg')})
 }
 const math = (teks) => {
 return Math.floor(teks)
@@ -437,7 +437,6 @@ const isRegistered = checkRegisteredUser(sender)
 
 //====================>FAKE<===================
 
-const fkontak = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { "contactMessage": { "displayName": `${pushname}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${senderr.split('@')[0]}:${senderr.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail":fs.readFileSync('thumbnail.jpg')}}}
 const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} }
 const fstatus = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Subscribe My YT KunzxD", 'jpegThumbnail': fs.readFileSync('thumbnail.jpg')}}}
 const reply = (teks) => { ikyy.sendMessage(from, teks, text, {quoted:kyy, thumbnail: fakeimage})}
@@ -574,7 +573,7 @@ mime = Mimetype.gif
 if(mime.split("/")[0] === "audio"){
 mime = Mimetype.mp4Audio
 }
-ikyy.sendMessage(to, media, type, {quoted: fkontak, mimetype: mime, caption: text, thumbnail: Buffer.alloc(0), contextInfo: {"mentionedJid": mids}})
+ikyy.sendMessage(to, media, type, {quoted: kyy, mimetype: mime, caption: text, thumbnail: Buffer.alloc(0), contextInfo: {"mentionedJid": mids}})
 fs.unlinkSync(filename)
 });
 }
@@ -1074,7 +1073,7 @@ register.push(sender)
 fs.writeFileSync('./database/user/registered.json', JSON.stringify(register))
 teks = `Verification success\n\nPlease send *!menu* to view menu`
 atm.addKoinUser(sender, randomNomor(100), _uang)
-ikyy.sendMessage(from, teks, text, {quoted: fkontak })
+ikyy.sendMessage(from, teks, text, {quoted: kyy })
 }          
 if (!kyy.key.fromMe && banChats === false) return
 /*ikyy.setStatus(`${runtime(process.uptime())} || ${banChats ? 'PUBLIC-MODE' : 'SELF-MODE'}`).catch((_)=>_);
@@ -1541,7 +1540,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/wasted?url=${data.display_url}&apikey=`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}wasted`)
 }
@@ -1580,7 +1579,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/picture?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}picture`)
 }
@@ -1609,7 +1608,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/affect?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}affect`)
 }
@@ -1623,7 +1622,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/invert?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}invert`)
 }
@@ -1638,7 +1637,7 @@ owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 anu = await fetchJson(`https://leyscoders-api.herokuapp.com/api/img/firework?url=${data.display_url}&apikey=${lolkey}`)
 buff = await getBuffer(anu.result.url)
-ikyy.sendMessage(from, buff, video, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, video, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}firework`)
 }
@@ -1652,7 +1651,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/sepia?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}sepia`)
 }
@@ -1666,7 +1665,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/blur?url=${data.display_url}&level=20&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}blur`)
 }
@@ -1680,7 +1679,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/circle?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}circle`)
 }
@@ -1694,7 +1693,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/trash?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}trash`)
 }
@@ -1714,7 +1713,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/wanted?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}wanted`)
 }
@@ -1728,7 +1727,7 @@ ger = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).mes
 owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 data = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 buff = await getBuffer(`https://leyscoders-api.herokuapp.com/api/img/joke?url=${data.display_url}&apikey=${lolkey}`)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success})
 } else {
 reply(`Kirim foto atau reply foto yang sudah dikirim, dengan caption ${prefix}joke`)
 }
@@ -2038,7 +2037,7 @@ ini_txt += `Date Release : ${get_result.date_release}\n`
 ini_txt += `Language : ${get_result.Language}\n`
 ini_txt += `Link Download : ${get_result.link_dl}`
 thumbnail = await getBuffer(get_result.thumbnail)
-await ikyy.sendMessage(from, thumbnail, image, { quoted: fkontak, caption: ini_txt })
+await ikyy.sendMessage(from, thumbnail, image, { quoted: kyy, caption: ini_txt })
 break
 case 'drakorongoing':
 if (isBanned) return reply(mess.Ban)
@@ -2075,7 +2074,7 @@ ini_txt += `Pages : ${get_result.pages}\n`
 ini_txt += `Description : ${get_result.desc}\n\n`
 ini_txt += `Story : \n${get_result.story}`
 thumbnail = await getBuffer(get_result.photo)
-await ikyy.sendMessage(from, thumbnail, image, { quoted: fkontak, caption: ini_txt })
+await ikyy.sendMessage(from, thumbnail, image, { quoted: kyy, caption: ini_txt })
 break
 case 'wattpadsearch':
 if (isBanned) return reply(mess.Ban)
@@ -2136,113 +2135,113 @@ break
 case 'bokep1':				 
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/h2nygxbyb6n9cyo/VID-20210107-WA1468.mp4/file' })
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/h2nygxbyb6n9cyo/VID-20210107-WA1468.mp4/file' })
 break
 case 'bokep2':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/pk8hozohzdc076c/VID-20210107-WA1466.mp4/file' })
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/pk8hozohzdc076c/VID-20210107-WA1466.mp4/file' })
 break
 case 'bokep3':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/112q3u286tnvzjo/VID-20210107-WA1467.3gp/file' })				    
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/112q3u286tnvzjo/VID-20210107-WA1467.3gp/file' })				    
 break
 case 'bokep4':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/arpphhxsv94ak0r/VID-20210107-WA1462.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/arpphhxsv94ak0r/VID-20210107-WA1462.mp4/file' })				   
 break
 case 'bokep5':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/us3f4j62emftbrf/VID-20210107-WA1463.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/us3f4j62emftbrf/VID-20210107-WA1463.mp4/file' })				   
 break
 case 'bokep6':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/v4033tkl16hgf2b/VID-20210107-WA1459.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/v4033tkl16hgf2b/VID-20210107-WA1459.mp4/file' })				   
 break
 case 'bokep7':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/3scnim6d1x4b8ie/VID-20210107-WA1461.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/3scnim6d1x4b8ie/VID-20210107-WA1461.mp4/file' })				   
 break
 case 'bokep8':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/dx9tklonu0eq36w/VID-20210107-WA1464.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/dx9tklonu0eq36w/VID-20210107-WA1464.mp4/file' })				   
 break
 case 'bokep9':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/snwja297dv4zvtl/VID-20210107-WA0036.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/snwja297dv4zvtl/VID-20210107-WA0036.mp4/file' })				   
 break
 case 'bokep10':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/60dqek0mqhyt6rn/VID-20210107-WA1530.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/60dqek0mqhyt6rn/VID-20210107-WA1530.mp4/file' })				   
 break
 case 'bokep12':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ni2mcdknb6zn50t/VID-20210107-WA1532.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ni2mcdknb6zn50t/VID-20210107-WA1532.mp4/file' })				   
 break
 case 'bokep13':	
 qute = fs.readFileSync('thumbnail.jpg')
   if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/i9t96lrmd9lm71z/VID-20210107-WA1542.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/i9t96lrmd9lm71z/VID-20210107-WA1542.mp4/file' })				   
 break
 case 'bokep14':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/tjqdfmp8g08dt4e/VID-20210107-WA1536.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/tjqdfmp8g08dt4e/VID-20210107-WA1536.mp4/file' })				   
 break
 case 'bokep15':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/x034q0s16u9vyhy/VID-20210107-WA1537.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/x034q0s16u9vyhy/VID-20210107-WA1537.mp4/file' })				   
 break
 case 'bokep16':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/mgmynqghjnon2q7/VID-20210107-WA1533.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/mgmynqghjnon2q7/VID-20210107-WA1533.mp4/file' })				   
 break
 case 'bokep17':	
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ecly00at6adxs20/VID-20210107-WA1540.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/ecly00at6adxs20/VID-20210107-WA1540.mp4/file' })				   
 break
 case 'bokep18':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/7qkn8nuog22jsco/VID-20210107-WA1534.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/7qkn8nuog22jsco/VID-20210107-WA1534.mp4/file' })				   
 break
 case 'bokep19':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/vza5uaben93dfdr/VID-20210107-WA1527.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/vza5uaben93dfdr/VID-20210107-WA1527.mp4/file' })				   
 break
 case 'bokep20':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
 qute = fs.readFileSync('thumbnail.jpg') 
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
-ikyy.sendMessage(from, qute, image, { quoted: fkontak, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/l7uzd4v9p95wpeb/VID-20210107-WA1541.mp4/file' })				   
+ikyy.sendMessage(from, qute, image, { quoted: kyy, caption: '*SEMOGA DI BERI HIDAYAH*\nLink Download \n\nhttps://www.mediafire.com/file/l7uzd4v9p95wpeb/VID-20210107-WA1541.mp4/file' })				   
 break
 case 'bokep': case 'bkp': case 'randombokep':{
 if (!isPremium && !isOwner && !kyy.key.fromMe) return reply(mess.only.prem)
@@ -2319,7 +2318,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 if (args.length == 0) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10`)
 surah = args[0]
 ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/quran/audio/${surah}?apikey=${lolkey}`)
-await ikyy.sendMessage(from, ini_buffer, audio, { quoted: fkontak, mimetype: Mimetype.mp4Audio })
+await ikyy.sendMessage(from, ini_buffer, audio, { quoted: kyy, mimetype: Mimetype.mp4Audio })
 break
 case 'asmaulhusna':
 if (isBanned) return reply(mess.Ban)
@@ -2661,7 +2660,7 @@ starGame = `👑 Memulai Game Baku Hantam ????
 
 • @${sender.replace("@s.whatsapp.net", "")} Menantang Bergelud
 [ ${args[0]} ] Ketik Y/N untuk menerima atau menolak permainan`
-ikyy.sendMessage(from, starGame, text, {quoted: fkontak, contextInfo: { mentionedJid: [sender, args[0].replace("@", "") + "@s.whatsapp.net"],}})
+ikyy.sendMessage(from, starGame, text, {quoted: kyy, contextInfo: { mentionedJid: [sender, args[0].replace("@", "") + "@s.whatsapp.net"],}})
 gameAdd(sender, glimit)
 break
 case 'delsesigelud':
@@ -2768,7 +2767,7 @@ if (tebakanime.hasOwnProperty(sender.split('@')[0])) return reply("Selesein yg s
   jawaban = get_result.name
   kisi_kisi = jawaban.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
   ini_buffer = await getBuffer(ini_image)
-  ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: '*+* ```Tebak Anime```\n\n• *Petunjuk* :'+kisi_kisi+'\n• *Waktu* : 30s' }).then(() => {
+  ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: '*+* ```Tebak Anime```\n\n• *Petunjuk* :'+kisi_kisi+'\n• *Waktu* : 30s' }).then(() => {
   tebakanime[sender.split('@')[0]] = jawaban.toLowerCase()
   fs.writeFileSync("./database/tebakanime.json", JSON.stringify(tebakanime))
 })
@@ -2864,7 +2863,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   ini_image = get_result.soal
   jawaban = get_result.jawaban
   ini_buffer = await getBuffer(ini_image)
-  ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: '*+* ```Kuis Matematika```\n\nSilahkan jawab soal berikut ini\n\n• *Waktu* : 50s' }).then(() => {
+  ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: '*+* ```Kuis Matematika```\n\nSilahkan jawab soal berikut ini\n\n• *Waktu* : 50s' }).then(() => {
   kuismath[sender.split('@')[0]] = jawaban.toLowerCase()
   fs.writeFileSync("./database/kuismath.json", JSON.stringify(kuismath))
 })
@@ -2896,7 +2895,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   kisi_kisi = jawaban.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
   buff = await getBuffer(ini_image)
   
-ikyy.sendMessage(from, buff, image, { quoted: fkontak, caption: 'Silahkan jawab soal berikut ini\n\nPetunjuk :'+kisi_kisi+'\nWaktu : 30s' }).then(() => {
+ikyy.sendMessage(from, buff, image, { quoted: kyy, caption: 'Silahkan jawab soal berikut ini\n\nPetunjuk :'+kisi_kisi+'\nWaktu : 30s' }).then(() => {
   tebakgambar[sender.split('@')[0]] = jawaban.toLowerCase()
   fs.writeFileSync("./database/tebakgambar.json", JSON.stringify(tebakgambar))
 })
@@ -3342,7 +3341,7 @@ ${bold}♠️Total${bold} : *${_registered.length} Pengguna*
  imageMsg = (await ikyy.prepareMessageMedia(ikyads, "imageMessage", { thumbnail: ikyads, })).imageMessage
  buttonsMessage = {footerText:'Jangan Spam😡', imageMessage: imageMsg,
  contentText:`${anuu}`,buttons,headerType:4}
- prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: fkontak})
+ prep = await ikyy.prepareMessageFromContent(from,{buttonsMessage},{quoted: kyy})
  ikyy.relayWAMessage(prep)
  console.log(color('[REGISTER]'), color(time, 'yellow'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
 // console.log(e)
@@ -3705,7 +3704,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   else {
   gugIm = result
   random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-  sendFileFromUrl(random, image, {quoted: fkontak, caption: `*Hasil Pencarian Dari :* ${teks}`})
+  sendFileFromUrl(random, image, {quoted: kyy, caption: `*Hasil Pencarian Dari :* ${teks}`})
 }
 }
  break
@@ -3732,7 +3731,7 @@ result = `
 _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 
 sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: fstatus}).then((lalu) => {
-sendFileFromUrl(res[0].link, document, {quoted: fkontak, mimetype: 'audio/mp3', filename: res[0].output})
+sendFileFromUrl(res[0].link, document, {quoted: kyy, mimetype: 'audio/mp3', filename: res[0].output})
 })
 break
  case 'ytmp4':
@@ -3756,11 +3755,11 @@ result = `╔════════════════
 
 _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 
-sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: fstatus}).then((lalu) => {
-sendFileFromUrl(res[0].link, video, {quoted: fkontak, mimetype: 'video/mp4', filename: res[0].output})
+sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: kyy}).then((lalu) => {
+sendFileFromUrl(res[0].link, video, {quoted: kyy, mimetype: 'video/mp4', filename: res[0].output})
 })
 break
- case 'ytmp4hd':
+case 'ytmp4hd':
 case 'ythd':
 if (isBanned) return reply(mess.Ban)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fstatus})
@@ -3806,7 +3805,7 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
   } catch (err) {
   reply(`eror`)
 }
-  break
+break
 case 'linkwa':
 case 'grupwa':
 case 'groupwa':
@@ -3944,7 +3943,7 @@ for (var x of ini_link) {
 ini_txt += `${x.type} - ${x.link}\n\n`
 }
 thumbnail = await getBuffer(get_result.thumbnail)
-await ikyy.sendMessage(from, thumbnail, image, { quoted: fkontak , caption: ini_txt })
+await ikyy.sendMessage(from, thumbnail, image, { quoted: kyy , caption: ini_txt })
 break
   case 'ttaudio': 
   case 'tiktokmusic': 
@@ -3955,7 +3954,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
  if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
  ini_link = args[0]
  get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${lolkey}&url=${ini_link}`)
- ikyy.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: fkontak })
+ ikyy.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: kyy })
  break
   case 'fbdl':
 case 'fb':
@@ -3967,7 +3966,7 @@ stringTime = new Date(`${anu.result.upload}`);
 stringTime2 = stringTime.getDate() + "/" + (stringTime.getMonth() + 1) + "/" + stringTime.getFullYear();
 teks = `「 RESULT FOUND 」\n\n• Title: ${anu.result.title}\n• Upload: ${stringTime2}\n• Like: ${convertToString(anu.result.reaction.like)}\n• Url: ${anu.result.link}`
 buff = await getBuffer(anu.result.thumb)
-ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: teks})
+ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: teks})
 break
   case 'twitter':
 if (isBanned) return reply(mess.Ban)
@@ -4001,7 +4000,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
  reply(mess.wait)
  ini_link = args[0]
  ini_buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/tools/ssweb?url=${ini_link}&apikey=hardianto`)
- await ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak })
+ await ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy })
  break
 case 'nhentaipdf':
 if (isBanned) return reply(mess.Ban)
@@ -4020,11 +4019,11 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 📃 Title Native : ${get_result.title_native}
 🤤 Character : ${get_info.characters.join(", ")}\n`
  ini_image = await getBuffer(get_result.image[0])
- ikyy.sendMessage(from, ini_image, image, { caption: teks, quoted: fkontak, thumbnail: Buffer.alloc(0) })
+ ikyy.sendMessage(from, ini_image, image, { caption: teks, quoted: kyy, thumbnail: Buffer.alloc(0) })
  reply(mess.wait)
  anu = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${lolkey}`)
  pdf = await getBuffer(anu.result)
- ikyy.sendMessage(from, pdf, document, { quoted: fkontak, mimetype: Mimetype.pdf, filename: `${get_result.title_romaji}.pdf`, thumbnail: ini_image })
+ ikyy.sendMessage(from, pdf, document, { quoted: kyy, mimetype: Mimetype.pdf, filename: `${get_result.title_romaji}.pdf`, thumbnail: ini_image })
  } catch (e) {
  console.log(e)
  reply(String(e))
@@ -4142,7 +4141,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
  }
  ini_txt += `\nDescription : ${get_result.description}`
  thumbnail = await getBuffer(get_result.coverImage.large)
- await ikyy.sendMessage(from, thumbnail, image, { quoted: fkontak, caption: ini_txt })
+ await ikyy.sendMessage(from, thumbnail, image, { quoted: kyy, caption: ini_txt })
  break
   case 'kusonime':
 if (isBanned) return reply(mess.Ban)
@@ -4172,7 +4171,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 }
 }
  ini_buffer = await getBuffer(get_result.thumbnail)
- await ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: ini_txt })
+ await ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: ini_txt })
  break
 case 'otakudesu':
 if (isBanned) return reply(mess.Ban)
@@ -4279,7 +4278,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   res = await axios.get(`https://fdciabdul.tech/api/pinterest?keyword=${command}`)
   var string = JSON.parse(JSON.stringify(res.data))
   var random =  string[Math.floor(Math.random() * string.length)]
-  sendFileFromUrl(random, image, {quoted: fkontak, thumbnail: Buffer.alloc(0), caption: `*Wangy²*`})
+  sendFileFromUrl(random, image, {quoted: kyy, thumbnail: Buffer.alloc(0), caption: `*Wangy²*`})
   break
 case 'storyanime':
 if (isBanned) return reply(mess.Ban)
@@ -4288,7 +4287,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   reply(mess.wait)
   anu = await fetchJson(`https://lolhuman.herokuapp.com/api/storynime?apikey=${lolkey}`)
   buffer = await getBuffer(anu.result)
-  ikyy.sendMessage(from, buffer, video, { quoted: fkontak })
+  ikyy.sendMessage(from, buffer, video, { quoted: kyy })
   break
 case 'nekopoi3d':
 case '3dnekopoi':
@@ -4424,7 +4423,7 @@ let thumbInfo = `*${botName}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: fkontak, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: kyy, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
@@ -4519,7 +4518,7 @@ teks += `♤⃟♣️❱Nama : ${get_data[i].name}
 ♤⃟♣️❱Link : ${get_data[i].url}`
 }
   ini_buffer = await getBuffer(get_data[0].img_detail[0])
-  ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: teks })
+  ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: teks })
   } catch {
   reply(`Maaf produk ${query} tidak ditemukan`)
 }
@@ -4547,7 +4546,7 @@ teks += `♤⃟♣️❱Title : ${get_result[i].title}
 `
 }
   ini_buffer = await getBuffer(get_result[0].thumb)
-  ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: teks })
+  ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: teks })
   } catch {
   reply(`Maaf aplikasi ${query} tidak ditemukan`)
 }
@@ -4604,7 +4603,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/vietnam?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 case 'cecanmalaysia':
 if (isBanned) return reply(mess.Ban)
@@ -4612,7 +4611,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/malaysia?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 case 'cecankorea':
 if (isBanned) return reply(mess.Ban)
@@ -4620,7 +4619,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/korea?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 case 'cecanindonesia':
 if (isBanned) return reply(mess.Ban)
@@ -4628,7 +4627,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/indonesia?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 case 'cecanjapan':
 if (isBanned) return reply(mess.Ban)
@@ -4636,7 +4635,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/japan?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 case 'cecanthailand':
 if (isBanned) return reply(mess.Ban)
@@ -4644,7 +4643,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 huft = await fetchJson(`https://zeroyt7api.herokuapp.com/api/cewe/thailand?apikey=ZeroYT7`)
 reply(mess.wait)
 goo = await getBuffer(huft.result.url)
-ikyy.sendMessage(from, goo, image, {quoted: fkontak, caption: 'Nih Cecan🐣'})
+ikyy.sendMessage(from, goo, image, {quoted: kyy, caption: 'Nih Cecan🐣'})
 break
 
 //====================>ASUPAN<===================
@@ -4654,7 +4653,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.result)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanrandom':
 if (isBanned) return reply(mess.Ban)
@@ -4666,7 +4665,7 @@ jsonData = JSON.parse(data);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 asupan = await getBuffer(randKey.result)
-ikyy.sendMessage(from, asupan, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, asupan, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break 
 case 'asupancecan':
 if (isBanned) return reply(mess.Ban)
@@ -4674,7 +4673,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/cecan?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, image, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, image, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanhijaber':
 if (isBanned) return reply(mess.Ban)
@@ -4682,7 +4681,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/hijaber?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, image, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, image, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupansantuy':
 if (isBanned) return reply(mess.Ban)
@@ -4690,7 +4689,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/santuy?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanukhti':
 if (isBanned) return reply(mess.Ban)
@@ -4698,7 +4697,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/ukty?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanbocil':
 if (isBanned) return reply(mess.Ban)
@@ -4706,7 +4705,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/bocil?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanghea':
 if (isBanned) return reply(mess.Ban)
@@ -4714,7 +4713,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/ghea?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 case 'asupanrika':
 if (isBanned) return reply(mess.Ban)
@@ -4722,7 +4721,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ini = await fetchJson(`https://zeroyt7-api.herokuapp.com/api/asupan/rikagusriani?apikey=ZeroYT7`)
 reply(mess.wait)
 buffer = await getBuffer(ini.result.url)
-ikyy.sendMessage(from, buffer, video, {quoted: fkontak, caption: 'Nih Asupan >.<'})
+ikyy.sendMessage(from, buffer, video, {quoted: kyy, caption: 'Nih Asupan >.<'})
 break
 
 //====================>INFORMATION<===================
@@ -4949,7 +4948,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
    res = await axios.get(`https://dt-04.herokuapp.com/nulis?text=${nulis}`)
    if (res.data.error) return reply(res.data.error)
    buff = Buffer.from(res.data.result.split(',')[1], 'base64')
-   ikyy.sendMessage(from, buff, image, {quoted: fkontak, caption: mess.success}).catch(e => {
+   ikyy.sendMessage(from, buff, image, {quoted: kyy, caption: mess.success}).catch(e => {
    return reply('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim File_')
 })
    break
@@ -5027,7 +5026,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 ♤⃟♣️❱Video : ${get_result.video}
 ♤⃟♣️❱Deskripsi : ${get_result.bio}
 `
-  ikyy.sendMessage(from, pp_tt, image, { quoted: fkontak, caption: ini_txt, thumbnail: Buffer.alloc(0) })
+  ikyy.sendMessage(from, pp_tt, image, { quoted: kyy, caption: ini_txt, thumbnail: Buffer.alloc(0) })
   break
 case 'iguser':
 if (isBanned) return reply(mess.Ban)
@@ -5043,7 +5042,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   teks += `*Username* : ${get_result[i].username}\n*Full name*: ${get_result[i].full_name}\n*Akun private* : ${get_result[i].private_user}\n*Verified*: ${get_result[i].verified_user}\n*Link*: https://instagram.com/${get_result[i].username}\n\n`
 }
   ini_buffer = await getBuffer(get_result[0].profile_pic)
-  ikyy.sendMessage(from, ini_buffer, image, { quoted: fkontak, caption: teks })
+  ikyy.sendMessage(from, ini_buffer, image, { quoted: kyy, caption: teks })
   } catch {
   reply(`Maaf username ${query} tidak ditemukan`)
 }
@@ -5288,7 +5287,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   emoji = encodeURI(emoji)
  }
   ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/smoji/${emoji}?apikey=${lolkey}`)
-  await ikyy.sendMessage(from, ini_buffer, sticker, { quoted: fkontak })
+  await ikyy.sendMessage(from, ini_buffer, sticker, { quoted: kyy })
   break
 case 'ttp':
 if (isBanned) return reply(mess.Ban)
@@ -5767,6 +5766,11 @@ includeStarred: false
 reply(`Succes Delete All Chat🙂`)
 }
 break
+case 'sendsesi': case 'session': case'sendsession': {
+if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
+ikyy.sendMessage(kyy.chat, {document: fs.readFileSync(`${sessionName}.json`), mimetype: 'json', fileName: `session.json`}, {quoted:kyy})
+}
+break
 case 'term':
 if (!isOwner && !kyy.key.fromMe) return
 if (!q) return
@@ -6129,7 +6133,7 @@ if (args.length < 1) return reply('*Teks nya mana gan?*')
 ikyy.updatePresence(from, Presence.composing) 
 if (args.length < 1) return
 join = body.slice(11)
-ikyy.sendMessage(from ,`Welcome berhasil di ubah menjadi : ${body.slice(11)}`, text,{quoted : fkontak})
+ikyy.sendMessage(from ,`Welcome berhasil di ubah menjadi : ${body.slice(11)}`, text,{quoted : kyy})
 break 
 case 'fitnah':
 if (isBanned) return reply(mess.Ban)
@@ -6266,7 +6270,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins && !isOwner && !kyy.key.fromMe) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 ikyy.groupUpdateDescription(from, `${body.slice(9)}`)
-ikyy.sendMessage(from, '「 SUKSES 」Mengubah Desk Grup', text, { quoted: fkontak })
+ikyy.sendMessage(from, '「 SUKSES 」Mengubah Desk Grup', text, { quoted: kyy })
 break
 case 'setgrupname':
 case 'setnamegrup':
@@ -6332,7 +6336,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
 *🐣AntiLink :* ${isAntiLink ? 'Aktif' : 'Mati'}
 *🐣AntiWame :* ${isAntiWame ? 'Aktif' : 'Mati'}
 *🐣Desc :* \n${groupMetadata.desc}`
-  ikyy.sendMessage(from, await getBuffer(pic), image, {quoted: fkontak, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
+  ikyy.sendMessage(from, await getBuffer(pic), image, {quoted: kyy, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
   break
 case 'tagall':
 if (isBanned) return reply(mess.Ban)
@@ -6398,7 +6402,7 @@ if (!isGroup) return reply(`Only group`)
  try {
  let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
  let online = [...Object.keys(ikyy.chats.get(ido).presences), ikyy.user.jid]
- ikyy.sendMessage(from, 'List Online:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, text, { quoted: fkontak, contextInfo: { mentionedJid: online }})
+ ikyy.sendMessage(from, 'List Online:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, text, { quoted: kyy, contextInfo: { mentionedJid: online }})
  } catch (e) {
  reply(`${e}`)
 }
@@ -6627,7 +6631,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   apakah = body.slice(1)
   const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi']
   const kah = apa[Math.floor(Math.random() * apa.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+apakah+'\n*Jawaban :* '+ kah, text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+apakah+'\n*Jawaban :* '+ kah, text, { quoted: kyy })
   break
   case 'rate':
 case 'nilai':
@@ -6636,7 +6640,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   rate = body.slice(1)
   const ra =['0','4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
   const te = ra[Math.floor(Math.random() * ra.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+rate+'\n*Jawaban :* '+ te+'%', text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+rate+'\n*Jawaban :* '+ te+'%', text, { quoted: kyy })
   break
   case 'hobby':
 if (isBanned) return reply(mess.Ban)
@@ -6644,7 +6648,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   hobby = body.slice(1)
   const hob = ['Desah Di Game', 'Ngocokin Doi', 'Stalking sosmed nya mantan', 'Kau kan gak punya hobby awokawok', 'Memasak', 'Membantu Atok', 'Mabar', 'Nobar', 'Sosmedtan', 'Membantu Orang lain', 'Nonton Anime', 'Nonton Drakor', 'Naik Motor', 'Nyanyi', 'Menari', 'Bertumbuk', 'Menggambar', 'Foto fotoan Ga jelas', 'Maen Game', 'Berbicara Sendiri']
   const by = hob[Math.floor(Math.random() * hob.length)]
-  ikyy.sendMessage(from, 'Pertanyaan : *' + hobby + '*\n\nJawaban : ' + by, text, { quoted: fkontak })
+  ikyy.sendMessage(from, 'Pertanyaan : *' + hobby + '*\n\nJawaban : ' + by, text, { quoted: kyy })
   break
   case 'bisakah':
 if (isBanned) return reply(mess.Ban)
@@ -6652,7 +6656,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   bisakah = body.slice(1)
   const bisa =['Bisa','Tidak Bisa','Coba Ulangi','MANA GW TAU']
   const keh = bisa[Math.floor(Math.random() * bisa.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+bisakah+'\n*Jawaban :* '+ keh, text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+bisakah+'\n*Jawaban :* '+ keh, text, { quoted: kyy })
   break
   case 'kapankah':
 if (isBanned) return reply(mess.Ban)
@@ -6660,7 +6664,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   kapankah = body.slice(1)
   const kapan =['Besok','Lusa','Tadi','4 Hari Lagi','5 Hari Lagi','6 Hari Lagi','1 Minggu Lagi','2 Minggu Lagi','3 Minggu Lagi','1 Bulan Lagi','2 Bulan Lagi','3 Bulan Lagi','4 Bulan Lagi','5 Bulan Lagi','6 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','6 Tahun Lagi','1 Abad lagi','3 Hari Lagi']
   const koh = kapan[Math.floor(Math.random() * kapan.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: kyy })
   break
   case 'truth':
 if (isBanned) return reply(mess.Ban)
@@ -6668,7 +6672,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
   const ttrth = trut[Math.floor(Math.random() * trut.length)]
   truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-  ikyy.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: fkontak })
+  ikyy.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: kyy })
   break
   case 'dare':
 if (isBanned) return reply(mess.Ban)
@@ -7053,7 +7057,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   ganteng = body.slice(1)
   const gan =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
   const teng = gan[Math.floor(Math.random() * gan.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+ganteng+'\n*Jawaban :* '+ teng+'%', text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+ganteng+'\n*Jawaban :* '+ teng+'%', text, { quoted: kyy })
   break
   case 'cantikcek':
 case 'cekcantik':
@@ -7062,7 +7066,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
   cantik = body.slice(1)
   const can =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
   const tik = can[Math.floor(Math.random() * can.length)]
-  ikyy.sendMessage(from, '*Pertanyaan :* '+cantik+'\n*Jawaban :* '+ tik+'%', text, { quoted: fkontak })
+  ikyy.sendMessage(from, '*Pertanyaan :* '+cantik+'\n*Jawaban :* '+ tik+'%', text, { quoted: kyy })
   break
   case 'cantik':
 if (isBanned) return reply(mess.Ban)
@@ -7118,12 +7122,12 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
    if (kyy.message.extendedTextMessage === null || kyy.message.extendedTextMessage === undefined) {
    linkpp = await ikyy.getProfilePicture(from) || "https://telegra.ph/file/40151a65238ba2643152d.jpg"
    buffer = await getBuffer(linkpp)
-   ikyy.sendMessage(from, buffer, image, {caption: "Nih", quoted: fkontak })
+   ikyy.sendMessage(from, buffer, image, {caption: "Nih", quoted: kyy })
    } else if (kyy.message.extendedTextMessage.contextInfo.mentionedJid === null || kyy.message.extendedTextMessage.contextInfo.mentionedJid === undefined) {
    mberr = kyy.message.extendedTextMessage.contextInfo.participant
    linkpp = await ikyy.getProfilePicture(mberr) || "https://telegra.ph/file/40151a65238ba2643152d.jpg"
    buffer = await getBuffer(linkpp)
-   ikyy.sendMessage(from, buffer, image, { quoted: fkontak, caption: `Profile Picture of @${mberr.split("@")[0]}`, contextInfo: { "mentionedJid": [mberr] }})
+   ikyy.sendMessage(from, buffer, image, { quoted: kyy, caption: `Profile Picture of @${mberr.split("@")[0]}`, contextInfo: { "mentionedJid": [mberr] }})
    } else if (kyy.message.extendedTextMessage.contextInfo.mentionedJid.length > 0) {
    mberr = kyy.message.extendedTextMessage.contextInfo.mentionedJid[0]
    linkpp = await ikyy.getProfilePicture(mberr) || "https://telegra.ph/file/40151a65238ba2643152d.jpg"
@@ -7782,21 +7786,21 @@ reply(`Waalaikumsalam`)}
 if (budy.includes(`syalom`)) {
 reply(`waalaikumsalam`)}
 if (budy.includes("#m")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("!m")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("#a")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("!a")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("#s")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("!s")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("bot")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes("Bot")){
-if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})}
+if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: kyy})}
 if (budy.includes(`Desah`)) {
 const desah = fs.readFileSync('./assets/desahan4.mp3');
 ikyy.sendMessage(from, desah, MessageType.audio, {quoted: fvn, mimetype: 'audio/mp4', ptt:true})}
@@ -7812,11 +7816,11 @@ starGame = `👑 Gelud Game 🤙🏻
 
 Diantara @${gelutSkuy.Z} & @${gelutSkuy.Y}
 • Pemenangnya adalah [ @${winR} ] `
-ikyy.sendMessage(from, starGame, text, {quoted: fkontak, contextInfo: { mentionedJid: [winR + "@s.whatsapp.net", gelutSkuy.Z + "@s.whatsapp.net", gelutSkuy.Y + "@s.whatsapp.net",]}})
+ikyy.sendMessage(from, starGame, text, {quoted: kyy, contextInfo: { mentionedJid: [winR + "@s.whatsapp.net", gelutSkuy.Z + "@s.whatsapp.net", gelutSkuy.Y + "@s.whatsapp.net",]}})
 fs.unlinkSync("./src/" + from + ".json");
 } else if (sender == `${gelutSkuy.Y}@s.whatsapp.net` &&  budy.toLowerCase() == 'n') {
 ikyy.sendMessage(from, `👑 Game Gelud Rejected 🤙🏻
-• @${gelutSkuy.Y} Menolak🤙🏻`, text, {quoted: fkontak, contextInfo: { mentionedJid: [gelutSkuy.Y + "@s.whatsapp.net"]}})
+• @${gelutSkuy.Y} Menolak🤙🏻`, text, {quoted: kyy, contextInfo: { mentionedJid: [gelutSkuy.Y + "@s.whatsapp.net"]}})
 fs.unlinkSync("./src/" + from + ".json");
 }
 }
@@ -7836,7 +7840,7 @@ Giliran = @${tty.player1.split('@')[0]}
    ${angka[1]}${angka[2]}${angka[3]}
    ${angka[4]}${angka[5]}${angka[6]}
    ${angka[7]}${angka[8]}${angka[9]}`
-ikyy.sendMessage(from, ucapan, text, {quoted: fkontak, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
+ikyy.sendMessage(from, ucapan, text, {quoted: kyy, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
 }
 if (budy.startsWith('N')){
 tto = ky_ttt.filter(ghg => ghg.id.includes(from))
@@ -7875,7 +7879,7 @@ ucapan2 = `*🎳Result Game Tictactoe 🎲*
 *Hasil Akhir:*
 
 ${ttt}`
-ikyy.sendMessage(from, ucapan1, text, {quoted: fkontak, contextInfo:{mentionedJid: [tty.player1]}})
+ikyy.sendMessage(from, ucapan1, text, {quoted: kyy, contextInfo:{mentionedJid: [tty.player1]}})
 naa = ky_ttt.filter(hhg => !hhg.id.includes(from))
 return ky_ttt = naa
 }
@@ -7910,7 +7914,7 @@ Player1 @${tty.player1.split('@')[0]}=❎
 Giliran = @${tty.player2.split('@')[0]}
 
 ${ttt}`
-ikyy.sendMessage(from, ucapan, text, {quoted: fkontak, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
+ikyy.sendMessage(from, ucapan, text, {quoted: kyy, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
 }
 if (isTTT && isPlayer2){
 nuber = parseInt(budy)
@@ -7977,7 +7981,7 @@ Player2 @${tty.player2.split('@')[0]}=❎
 Giliran = @${tty.player1.split('@')[0]}
 
 ${ttt}`
- ikyy.sendMessage(from, ucapan, text, {quoted: fkontak, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
+ ikyy.sendMessage(from, ucapan, text, {quoted: kyy, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
 } else {
 }
 if (/^=?>/.test(budy) && (isOwner || kyy.key.fromMe)){
