@@ -291,6 +291,7 @@ exports.ownerMenu = (prefix) => {
 ┃✗⃟♠️❱${p2}*term*
 ┃✗⃟♠️❱${p2}*eval*
 ┃✗⃟♠️❱${p2}*reset*
+┃✗⃟♠️❱${p2}*sendsesi*
 ┃✗⃟♠️❱${p2}*clearall*
 ┃✗⃟♠️❱${p2}*leaveall*
 ┃✗⃟♠️❱${p2}*leaveall*
@@ -858,6 +859,7 @@ exports.allMenuu = (prefix) => {
 ┃✗⃟♠️❱${prefix}term
 ┃✗⃟♠️❱${prefix}eval 
 ┃✗⃟♠️❱${prefix}reset
+┃✗⃟♠️❱${prefix}sendsesi
 ┃✗⃟♠️❱${prefix}clearall
 ┃✗⃟♠️❱${prefix}leaveall
 ┃✗⃟♠️❱${prefix}leaveall
