@@ -1,4 +1,4 @@
-const { WAConnection, Browsers, MessageType } = require('@adiwajshing/baileys')
+const { Browsers, MessageType } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const fs = require("fs-extra")
 const figlet = require('figlet')
