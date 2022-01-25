@@ -5755,7 +5755,7 @@ sendMess(_.jid, `𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 𝙂𝙍𝙐𝙋\n\n${body
 reply('Sukses broadcast group')
 }
 break
-case 'clearall':{
+case 'clearall':
 if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
 let chiit = await ikyy.chats.all()
 for (let i of chiit){
@@ -5764,12 +5764,6 @@ includeStarred: false
 })
 }
 reply(`Succes Delete All Chat🙂`)
-}
-break
-case 'sendsesi': case 'session': case'sendsession': {
-if (!isOwner && !kyy.key.fromMe) return reply(mess.only.owner)
-ikyy.sendMessage(kyy.chat, {document: fs.readFileSync(`${sessionName}.json`), mimetype: 'json', fileName: `session.json`}, {quoted:kyy})
-}
 break
 case 'term':
 if (!isOwner && !kyy.key.fromMe) return
